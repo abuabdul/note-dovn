@@ -1,0 +1,38 @@
+.brand-logo{
+	color: #26ADA1;
+}
+
+.scroll-down, .scroll-up {
+    font-size: 20px;
+}
+
+/* Override theme css */
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #3C5B45;
+}
+
+.navbar-brand {
+    font-size: 19px;
+    line-height: 20px;
+}
+
+.navbar-default{
+	background-color: #CED9BC;
+	border-color: #fff;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #3C5B45;
+}
+
+/* 
+* Referred Theme Page
+* http://www.lavishbootstrap.com/?image_url=http://design-seeds.com/palettes/GrassColor510.png 
+*/
