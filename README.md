@@ -1,2 +1,2 @@
 # note-dovn
-note down notes, pen pal kind of application developed in java
+note down notes, scratch text, any scripts, utility kind of application developed in java, spring, bootstrap
