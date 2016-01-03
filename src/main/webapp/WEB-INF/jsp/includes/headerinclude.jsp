@@ -2,18 +2,12 @@
 
 <!-- Bootstrap -->
 <link href="<c:url value='/resources/css/bootstrap.min.css'/>"	rel="stylesheet">
-<link href="<c:url value='/resources/css/simple-sidebar.css'/>" rel="stylesheet">
+<link href="<c:url value='/resources/css/scrolling-nav.css'/>" rel="stylesheet">
 
-<!-- For Bootstrap Validator -->
-<link href="<c:url value='/resources/css/bootstrapValidator.min.css'/>" rel="stylesheet"/>
 <!--  Font Awesome  -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"/>
 
-<!-- Include Bootstrap Datatable plugin -->
-<link rel="stylesheet" href="<c:url value='/resources/css/dataTables.bootstrap.min.css'/>" />
-
-<!-- fourt style -->
-<link href="<c:url value='/resources/css/fourt-main.css'/>" rel="stylesheet">
+<link href="<c:url value='/resources/css/note-dovn.css'/>" rel="stylesheet">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
