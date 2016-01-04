@@ -6,13 +6,11 @@
     font-size: 20px;
 }
 
-.buffer { 
-	margin-top:20px; 
-	margin-bottom:20px;
+.buffer-bottom {
+	margin-bottom: 5px;
 }
 
 /* Override theme css */
-
 body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;

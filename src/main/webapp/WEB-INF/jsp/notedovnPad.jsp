@@ -8,7 +8,8 @@
 	                    <p><strong>Write down your notes, scratch text, scripts</strong></p>
 	                    <a class="btn btn-default page-scroll" href="#about"><span class="glyphicon glyphicon-triangle-bottom scroll-down"></span></a>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 buffer">
+                <div class="col-xs-12 col-sm-12 col-md-12 buffer-bottom">
+                    <h1>{</h1>
 	                <form class="form-horizontal">
 					   <div class="form-group">
 						  <div class="col-sm-3"></div>
@@ -46,6 +47,7 @@
 						   <div class="col-sm-3"></div>
 					   </div>
 					</form>
+					<h1>}</h1>
                 </div>
             </div>
         </div>
