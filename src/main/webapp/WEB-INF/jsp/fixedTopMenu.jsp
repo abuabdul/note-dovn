@@ -29,6 +29,9 @@
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                 </ul>
+                <ul class="nav navbar-nav pull-right">
+                   <li><a href="http://abuabdul.com">&copy; abuabdul.com 2013-2016</span></a>
+                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
