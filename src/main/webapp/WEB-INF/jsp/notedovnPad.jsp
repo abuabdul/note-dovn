@@ -14,35 +14,35 @@
 					   <div class="form-group">
 						  <div class="col-sm-3"></div>
 						  <div class="col-sm-6">
-						      <input type="text" class="form-control" id="inputEmail3" placeholder="Notes">
+						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="Notes">
 						  </div>
 						  <div class="col-sm-3"></div>
 					   </div>
 					   <div class="form-group">
 						   <div class="col-sm-3"></div>
 						   <div class="col-sm-6">
-						      <input type="text" class="form-control" id="inputEmail3" placeholder="Notes">
+						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="Notes">
 						   </div>
 						   <div class="col-sm-3"></div>
 					   </div>
 					   <div class="form-group">
 						   <div class="col-sm-3"></div>
 						   <div class="col-sm-6">
-						      <input type="text" class="form-control" id="inputEmail3" placeholder="Notes">
+						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="Notes">
 						   </div>
 						   <div class="col-sm-3"></div>
 					   </div>
 					   <div class="form-group">
 						   <div class="col-sm-3"></div>
 						   <div class="col-sm-6">
-						      <input type="text" class="form-control" id="inputEmail3" placeholder="Notes">
+						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="Notes">
 						   </div>
 						   <div class="col-sm-3"></div>
 					   </div>
 					   <div class="form-group">
 						   <div class="col-sm-3"></div>
 						   <div class="col-sm-6">
-						      <button type="submit" class="btn btn-default">Note-Dovn</button>
+						      <button type="submit" class="btn btn-primary">Note-Dovn</button>
 						   </div>
 						   <div class="col-sm-3"></div>
 					   </div>

@@ -10,6 +10,12 @@
 	margin-bottom: 5px;
 }
 
+.no-border {
+	border: 0px #fff solid;
+	background-color: #fff;
+	color: #3C5B45;
+}
+
 /* Override theme css */
 body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -35,6 +41,15 @@ body {
   background-color: #3C5B45;
 }
 
+.btn-primary {
+    background: #3C5B45;
+    color: #ffffff;
+}
+ 
+.btn-primary:hover, .btn-primary:focus, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #3C5B45;
+}
+ 
 /* 
 * Referred Theme Page
 * http://www.lavishbootstrap.com/?image_url=http://design-seeds.com/palettes/GrassColor510.png 
