@@ -11,6 +11,8 @@ import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 
 import com.abuabdul.notedovn.dao.NoteDovnDAO;
 import com.abuabdul.notedovn.dao.NoteDovnDAOImpl;
+import com.abuabdul.notedovn.service.NoteDovnService;
+import com.abuabdul.notedovn.service.NoteDovnServiceImpl;
 import com.mongodb.MongoClient;
 
 /**
@@ -58,5 +60,10 @@ public class NoteDovnConfig {
 	@Bean
 	public NoteDovnDAO noteDovnDAO() throws Exception {
 		return new NoteDovnDAOImpl(mongoTemplate());
+	}
+
+	@Bean
+	public NoteDovnService noteDovnService() throws Exception {
+		return new NoteDovnServiceImpl(noteDovnDAO());
 	}
 }
