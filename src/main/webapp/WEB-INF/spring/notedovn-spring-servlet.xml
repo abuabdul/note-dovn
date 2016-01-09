@@ -24,7 +24,7 @@
 	<mvc:resources mapping="/resources/**" location="/WEB-INF/static-content/" cache-period="10000" />
 	
 	<!-- Spring MVC global exception handling -->
-	<bean class="com.abuabdul.notedovn.exception.resolver.NoteDovnExceptionResolver">
+	<bean class="com.abuabdul.notedovn.exception.NoteDovnExceptionResolver">
 	    <property name="exceptionMappings">
 	        <props>
 	        <!-- Map apt error views -->

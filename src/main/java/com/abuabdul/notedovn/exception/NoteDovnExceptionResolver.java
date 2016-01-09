@@ -14,7 +14,7 @@
  * limitations under the License.
  * 
  */
-package com.abuabdul.notedovn.exception.resolver;
+package com.abuabdul.notedovn.exception;
 
 import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 
