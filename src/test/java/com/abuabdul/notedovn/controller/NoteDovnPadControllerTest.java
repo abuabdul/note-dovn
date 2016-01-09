@@ -33,4 +33,9 @@ public class NoteDovnPadControllerTest {
 		mockMvc.perform(post("/scratch/notedovnPad.go")).andExpect(status().isOk())
 				.andExpect(view().name("notedovnPad"));
 	}
+
+	@Test(groups = "integration")
+	public void testMakeScratchNotes() throws Exception {
+		mockMvc.perform(post("/scratch/makeNotes.go")).andExpect(status().isOk()).andExpect(view().name("notedovnPad"));
+	}
 }
