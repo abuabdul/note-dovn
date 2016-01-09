@@ -14,28 +14,35 @@
 					   <div class="form-group">
 						  <div class="col-sm-3"></div>
 						  <div class="col-sm-6">
-						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="Notes">
+						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="Category Name">
+						  </div>
+						  <div class="col-sm-3"></div>
+					   </div>
+					   <div class="form-group">
+						  <div class="col-sm-3"></div>
+						  <div class="col-sm-6">
+						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="What is it about?">
 						  </div>
 						  <div class="col-sm-3"></div>
 					   </div>
 					   <div class="form-group">
 						   <div class="col-sm-3"></div>
 						   <div class="col-sm-6">
-						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="Notes">
+						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="Why is it?">
 						   </div>
 						   <div class="col-sm-3"></div>
 					   </div>
 					   <div class="form-group">
 						   <div class="col-sm-3"></div>
 						   <div class="col-sm-6">
-						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="Notes">
+						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="A keynote">
 						   </div>
 						   <div class="col-sm-3"></div>
 					   </div>
 					   <div class="form-group">
 						   <div class="col-sm-3"></div>
 						   <div class="col-sm-6">
-						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="Notes">
+						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="An expressive side note">
 						   </div>
 						   <div class="col-sm-3"></div>
 					   </div>
