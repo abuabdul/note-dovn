@@ -6,9 +6,10 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
 
+<!-- For Bootstrap Validator -->
+<script src="<c:url value='/resources/js/bootstrapValidator.min.js'/>"></script>
+<script src="<c:url value='/resources/js/validation.util.js'/>"></script>
+
 <!-- Scrolling Nav JavaScript -->
 <script src="<c:url value='/resources/js/jquery.easing.min.js'/>"></script>
 <script src="<c:url value='/resources/js/scrolling-nav.js'/>"></script>
-
-
-

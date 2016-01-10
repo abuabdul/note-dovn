@@ -17,8 +17,8 @@
 		                       <div class="col-sm-6">
 								    <c:if test="${saveNoteDetails}">
 										<div class="alert alert-success">
-											<a href="#" class="close" data-dismiss="alert">&times;</a> Noted
-											successfully.
+											<a href="#" class="close" data-dismiss="alert">&times;</a> 
+											Noted!!!
 										</div>
 							        </c:if>
 							   </div>
@@ -27,7 +27,7 @@
 	  					   <div class="form-group">
 		  					   <div class="col-sm-3"></div>
 							   <div class="col-sm-6">
-								   <form:input type="text" class="form-control no-border" path="category" placeholder="Category Name"/>
+								   <form:input type="text" class="form-control no-border" path="category" placeholder="Category"/>
 							    </div>
 								<div class="col-sm-3"></div>
 						   </div>

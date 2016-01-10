@@ -4,6 +4,9 @@
 <link href="<c:url value='/resources/css/bootstrap.min.css'/>"	rel="stylesheet">
 <link href="<c:url value='/resources/css/scrolling-nav.css'/>" rel="stylesheet">
 
+<!-- For Bootstrap Validator -->
+<link href="<c:url value='/resources/css/bootstrapValidator.min.css'/>" rel="stylesheet"/>
+
 <!--  Font Awesome  -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"/>
 
