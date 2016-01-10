@@ -10,56 +10,70 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 buffer-bottom">
                     <h1>{</h1>
-	                <form class="form-horizontal">
-					   <div class="form-group">
-						  <div class="col-sm-3"></div>
-						  <div class="col-sm-6">
-						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="Category Name">
-						  </div>
-						  <div class="col-sm-3"></div>
-					   </div>
-					   <div class="form-group">
-						  <div class="col-sm-3"></div>
-						  <div class="col-sm-6">
-						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="What is it about?">
-						  </div>
-						  <div class="col-sm-3"></div>
-					   </div>
-					   <div class="form-group">
-						   <div class="col-sm-3"></div>
-						   <div class="col-sm-6">
-						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="Why is it?">
+					<c:url var="scratchPadUrl" value="/secure/scratch/makeNotes.go"/>
+                    <form:form id="scratchPadForm" class="form-horizontal" role="form" modelAttribute="scratchPadForm" action="${scratchPadUrl}" method="post">
+		                   <div class="form-group">
+		                       <div class="col-sm-3"></div>
+		                       <div class="col-sm-6">
+								    <c:if test="${saveNoteDetails}">
+										<div class="alert alert-success">
+											<a href="#" class="close" data-dismiss="alert">&times;</a> Noted
+											successfully.
+										</div>
+							        </c:if>
+							   </div>
+							   <div class="col-sm-3"></div>
 						   </div>
-						   <div class="col-sm-3"></div>
-					   </div>
-					   <div class="form-group">
-						   <div class="col-sm-3"></div>
-						   <div class="col-sm-6">
-						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="A keynote">
+	  					   <div class="form-group">
+		  					   <div class="col-sm-3"></div>
+							   <div class="col-sm-6">
+								   <form:input type="text" class="form-control no-border" path="category" placeholder="Category Name"/>
+							    </div>
+								<div class="col-sm-3"></div>
 						   </div>
-						   <div class="col-sm-3"></div>
-					   </div>
-					   <div class="form-group">
-						   <div class="col-sm-3"></div>
-						   <div class="col-sm-6">
-						      <input type="text" class="form-control no-border" id="inputEmail3" placeholder="An expressive side note">
+						   <div class="form-group">
+							  <div class="col-sm-3"></div>
+							  <div class="col-sm-6">
+							      <form:input type="text" class="form-control no-border" path="aboutNote" placeholder="What is it about?"/>
+							  </div>
+							  <div class="col-sm-3"></div>
 						   </div>
-						   <div class="col-sm-3"></div>
-					   </div>
-					   <div class="form-group">
-						   <div class="col-sm-3"></div>
-						   <div class="col-sm-6">
-						      <button type="submit" class="btn btn-primary">Note-Dovn</button>
+						   <div class="form-group">
+							   <div class="col-sm-3"></div>
+							   <div class="col-sm-6">
+							      <form:input type="text" class="form-control no-border" path="reasonNote" placeholder="Why is it?"/>
+							   </div>
+							   <div class="col-sm-3"></div>
 						   </div>
-						   <div class="col-sm-3"></div>
-					   </div>
-					</form>
+						   <div class="form-group">
+							   <div class="col-sm-3"></div>
+							   <div class="col-sm-6">
+							      <form:input type="text" class="form-control no-border" path="noteMsg" placeholder="A keynote"/>
+							   </div>
+							   <div class="col-sm-3"></div>
+						   </div>
+						   <div class="form-group">
+							   <div class="col-sm-3"></div>
+							   <div class="col-sm-6">
+							      <form:input type="text" class="form-control no-border" path="sideNote" placeholder="An expressive side note"/>
+							   </div>
+							   <div class="col-sm-3"></div>
+						   </div>
+						   <div class="form-group">
+							   <div class="col-sm-3"></div>
+							   <div class="col-sm-6">
+							       <button type="button" id="resetButton" class="btn btn-sm btn-default">Clear</button>
+							       &nbsp;
+							      <button type="submit" class="btn btn-sm btn-primary">Note-Dovn</button>
+							   </div>
+							   <div class="col-sm-3"></div>
+						   </div>
+					</form:form>
 					<h1>}</h1>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- ScratchPad Section -->
     <section id="scratchpad" class="scratchpad-section">
         <div class="container">
