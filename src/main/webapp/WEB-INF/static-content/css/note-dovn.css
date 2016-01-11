@@ -65,8 +65,8 @@ body {
 	background-color: #3C5B45;
 }
 
-.tooltip.bottom .tooltip-arrow {
-	border-bottom-color: #3C5B45;
+.tooltip.top .tooltip-arrow {
+	border-top-color: #3C5B45;
 }
  
 /* 

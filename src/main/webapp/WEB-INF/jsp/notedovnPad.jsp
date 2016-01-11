@@ -28,7 +28,7 @@
 		  					   <div class="col-sm-3"></div>
 							   <div class="col-sm-6">
 								   <form:input type="text" class="form-control no-border" path="category" placeholder="Category" 
-								               data-toggle="tooltip" data-placement="bottom" 
+								               data-toggle="tooltip" data-placement="top"
 								               title="Category just helps to classify notes"/>
 							    </div>
 								<div class="col-sm-3"></div>
@@ -37,7 +37,7 @@
 							  <div class="col-sm-3"></div>
 							  <div class="col-sm-6">
 							      <form:input type="text" class="form-control no-border" path="aboutNote" placeholder="What is it about?"
-							      			  data-toggle="tooltip" data-placement="bottom" 
+							      			  data-toggle="tooltip" data-placement="top"
 								              title="Tell us about note, what is it all about?"/>
 							  </div>
 							  <div class="col-sm-3"></div>
@@ -46,7 +46,7 @@
 							   <div class="col-sm-3"></div>
 							   <div class="col-sm-6">
 							      <form:input type="text" class="form-control no-border" path="reasonNote" placeholder="Why is it?"
-							      			  data-toggle="tooltip" data-placement="bottom" 
+							      			  data-toggle="tooltip" data-placement="top"
 								              title="You could have done something, why is it you want a note?"/>							      
 							   </div>
 							   <div class="col-sm-3"></div>
@@ -55,7 +55,7 @@
 							   <div class="col-sm-3"></div>
 							   <div class="col-sm-6">
 							      <form:input type="text" class="form-control no-border" path="noteMsg" placeholder="A keynote"
-   							      			  data-toggle="tooltip" data-placement="bottom" 
+   							      			  data-toggle="tooltip" data-placement="top"
 								              title="Place your key note text here"/>
 							   </div>
 							   <div class="col-sm-3"></div>
@@ -64,7 +64,7 @@
 							   <div class="col-sm-3"></div>
 							   <div class="col-sm-6">
 							      <form:input type="text" class="form-control no-border" path="sideNote" placeholder="An expressive side note"
-							      			  data-toggle="tooltip" data-placement="bottom" 
+							      			  data-toggle="tooltip" data-placement="top"
 								              title="You can also tell us elaborately anything with this keynote message?"/>
 							   </div>
 							   <div class="col-sm-3"></div>
@@ -93,13 +93,22 @@
 			    </div>
 			    <div class="col-xs-12 col-md-12">
 				    <div class="col-sm-4">
-					   <div class="note">Pinned text that can span upto col-sm-3 and for medium and large desktops</div>
+					   <div class="note">
+					     <a href="#" class="close" data-dismiss="alert">&times;</a>
+					     Pinned text that can span upto col-sm-3 and for medium and large desktops
+					   </div>
 					</div>
 					<div class="col-sm-4">
-					   <div class="note">Pinned text that can span upto col-sm-3 and for medium and large desktops</div>
+					   <div class="note">
+					     <a href="#" class="close">&times;</a>
+					     Pinned text that can span upto col-sm-3 and for medium and large desktops
+					   </div>
 					</div>
 					<div class="col-sm-4">
-					   <div class="note">Pinned text that can span upto col-sm-3 and for medium and large desktops</div>
+					   <div class="note">
+					     <a href="#" class="close" data-dismiss="alert">&times;</a>
+					     Pinned text that can span upto col-sm-3 and for medium and large desktops
+					   </div>
 					 </div>
 			    </div>
 			    <div class="col-xs-12 col-md-12 buffer-bottom">
