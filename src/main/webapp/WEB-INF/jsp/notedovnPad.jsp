@@ -90,27 +90,45 @@
             <div class="row">
                 <div class="col-xs-12 col-md-12">
                     <h1>Notes</h1>
+                    <c:url var="scratchShowUrl" value="/secure/scratch/publishNotes.go"/>
+                    <a href="${scratchShowUrl}">show All</a>
 			    </div>
-			    <div class="col-xs-12 col-md-12">
-				    <div class="col-sm-4">
-					   <div class="note">
-					     <a href="#" class="close" data-dismiss="alert">&times;</a>
-					     Pinned text that can span upto col-sm-3 and for medium and large desktops
-					   </div>
-					</div>
-					<div class="col-sm-4">
-					   <div class="note">
-					     <a href="#" class="close">&times;</a>
-					     Pinned text that can span upto col-sm-3 and for medium and large desktops
-					   </div>
-					</div>
-					<div class="col-sm-4">
-					   <div class="note">
-					     <a href="#" class="close" data-dismiss="alert">&times;</a>
-					     Pinned text that can span upto col-sm-3 and for medium and large desktops
-					   </div>
-					 </div>
-			    </div>
+			    <c:if test="${not empty notesFolder}">
+			      <c:forEach items="${notesFolder}" var="folder">
+				    <div class="col-xs-12 col-md-12">
+					    <div class="col-sm-4">
+						   <div class="note">
+						     <a href="#" class="close" data-dismiss="alert">&times;</a>
+						      ${folder.oneInTrioNote.category}<br>
+						      ${folder.oneInTrioNote.aboutNote}<br>
+						      ${folder.oneInTrioNote.reasonNote}<br>
+						      ${folder.oneInTrioNote.noteMsg}<br>
+						      ${folder.oneInTrioNote.sideNote}
+						   </div>
+						</div>
+						<div class="col-sm-4">
+						   <div class="note">
+						     <a href="#" class="close">&times;</a>
+						      ${folder.twoInTrioNote.category}
+						      ${folder.twoInTrioNote.aboutNote}
+						      ${folder.twoInTrioNote.reasonNote}
+						      ${folder.twoInTrioNote.noteMsg}
+						      ${folder.twoInTrioNote.sideNote}
+						   </div>
+						</div>
+						<div class="col-sm-4">
+						   <div class="note">
+						     <a href="#" class="close" data-dismiss="alert">&times;</a>
+						      ${folder.threeInTrioNote.category}
+						      ${folder.threeInTrioNote.aboutNote}
+						      ${folder.threeInTrioNote.reasonNote}
+						      ${folder.threeInTrioNote.noteMsg}
+						      ${folder.threeInTrioNote.sideNote}
+						   </div>
+						 </div>
+				    </div>
+				   </c:forEach> 
+				</c:if>   
 			    <div class="col-xs-12 col-md-12 buffer-bottom">
 	                 &nbsp;
                 </div>

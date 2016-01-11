@@ -1,5 +1,9 @@
 package com.abuabdul.notedovn.document.model;
 
+import java.util.Date;
+
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -7,8 +11,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @author abuabdul
  *
  */
-@Document(collection = "scratchpad")
+@Document(collection = ScratchNote.COLLECTION_NAME)
 public class ScratchNote {
+
+	public static final String COLLECTION_NAME = "scratchpad";
 
 	@Id
 	private String id;
@@ -17,6 +23,8 @@ public class ScratchNote {
 	private String reasonNote;
 	private String noteMsg;
 	private String sideNote;
+	private Date createdDate = getUTCDateTime();
+	private Date updatedDate = getUTCDateTime();
 
 	/**
 	 * @return the id
@@ -106,5 +114,39 @@ public class ScratchNote {
 	 */
 	public void setSideNote(String sideNote) {
 		this.sideNote = sideNote;
+	}
+
+	/**
+	 * @return the createdDate
+	 */
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	/**
+	 * @param createdDate
+	 *            the createdDate to set
+	 */
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public Date getUTCDateTime() {
+		return new DateTime(DateTimeZone.UTC).toDate();
+	}
+
+	/**
+	 * @return the updatedDate
+	 */
+	public Date getUpdatedDate() {
+		return updatedDate;
+	}
+
+	/**
+	 * @param updatedDate
+	 *            the updatedDate to set
+	 */
+	public void setUpdatedDate(Date updatedDate) {
+		this.updatedDate = updatedDate;
 	}
 }
