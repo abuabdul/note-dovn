@@ -3,12 +3,12 @@
     <section id="scratchform" class="scratchform-section">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="col-xs-12 col-md-12">
 	                    <h1>Scratch Pad</h1>
 	                    <p><strong>Write down your notes, scratch text, scripts</strong></p>
 	                    <a class="btn btn-default page-scroll" href="#about"><span class="glyphicon glyphicon-triangle-bottom scroll-down"></span></a>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 buffer-bottom">
+                <div class="col-xs-12 col-md-12 buffer-bottom">
                     <h1>{</h1>
 					<c:url var="scratchPadUrl" value="/secure/scratch/makeNotes.go"/>
                     <form:form id="scratchPadForm" class="form-horizontal" role="form" modelAttribute="scratchPadForm" action="${scratchPadUrl}" method="post">
@@ -88,19 +88,23 @@
     <section id="scratchpad" class="scratchpad-section">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <h1>ScratchPad Section</h1>
-                    <div class="pinned note-container">
-						<div class="note">
-							<h3>Pin it!</h3>
-							<p>Great for pinned navigations or just about anything you
-								want to stick.</p>
-							<p>
-								Developed by <a href="http://www.webpop.com">Webpop</a>.
-							</p>
-						</div>
-					</div>
+                <div class="col-xs-12 col-md-12">
+                    <h1>Notes</h1>
 			    </div>
+			    <div class="col-xs-12 col-md-12">
+				    <div class="col-sm-4">
+					   <div class="note">Pinned text that can span upto col-sm-3 and for medium and large desktops</div>
+					</div>
+					<div class="col-sm-4">
+					   <div class="note">Pinned text that can span upto col-sm-3 and for medium and large desktops</div>
+					</div>
+					<div class="col-sm-4">
+					   <div class="note">Pinned text that can span upto col-sm-3 and for medium and large desktops</div>
+					 </div>
+			    </div>
+			    <div class="col-xs-12 col-md-12 buffer-bottom">
+	                 &nbsp;
+                </div>
             </div>
         </div>
     </section>
@@ -109,7 +113,7 @@
     <section id="about" class="about-section">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="col-xs-12 col-md-12">
                     <h1>About Section</h1>
                     <a class="btn btn-default page-scroll" href="#scratchform"><span class="glyphicon glyphicon-triangle-top scroll-up"></span></a>
                 </div>
