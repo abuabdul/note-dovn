@@ -13,3 +13,5 @@
 <!-- Scrolling Nav JavaScript -->
 <script src="<c:url value='/resources/js/jquery.easing.min.js'/>"></script>
 <script src="<c:url value='/resources/js/scrolling-nav.js'/>"></script>
+
+<script src="<c:url value='/resources/js/note-dovn.js'/>"></script>

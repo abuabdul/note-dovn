@@ -1,3 +1,20 @@
+/* .note-container {
+}
+
+.note {
+    text-decoration: none;
+    background: #FFF none repeat scroll 0% 0%;
+    display: block;
+    padding: 20px;
+    width: 230px;
+    height: 100%;
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+    transform: rotate(-6deg);
+    font-size: 18px;
+}
+
+ */
+
 .brand-logo{
 	color: #26ADA1;
 }
@@ -48,6 +65,15 @@ body {
  
 .btn-primary:hover, .btn-primary:focus, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
     background: #3C5B45;
+}
+
+.tooltip-inner {
+	max-width: 100%;
+	background-color: #3C5B45;
+}
+
+.tooltip.bottom .tooltip-arrow {
+	border-bottom-color: #3C5B45;
 }
  
 /* 

@@ -27,35 +27,45 @@
 	  					   <div class="form-group">
 		  					   <div class="col-sm-3"></div>
 							   <div class="col-sm-6">
-								   <form:input type="text" class="form-control no-border" path="category" placeholder="Category"/>
+								   <form:input type="text" class="form-control no-border" path="category" placeholder="Category" 
+								               data-toggle="tooltip" data-placement="bottom" 
+								               title="Category just helps to classify notes"/>
 							    </div>
 								<div class="col-sm-3"></div>
 						   </div>
 						   <div class="form-group">
 							  <div class="col-sm-3"></div>
 							  <div class="col-sm-6">
-							      <form:input type="text" class="form-control no-border" path="aboutNote" placeholder="What is it about?"/>
+							      <form:input type="text" class="form-control no-border" path="aboutNote" placeholder="What is it about?"
+							      			  data-toggle="tooltip" data-placement="bottom" 
+								              title="Tell us about note, what is it all about?"/>
 							  </div>
 							  <div class="col-sm-3"></div>
 						   </div>
 						   <div class="form-group">
 							   <div class="col-sm-3"></div>
 							   <div class="col-sm-6">
-							      <form:input type="text" class="form-control no-border" path="reasonNote" placeholder="Why is it?"/>
+							      <form:input type="text" class="form-control no-border" path="reasonNote" placeholder="Why is it?"
+							      			  data-toggle="tooltip" data-placement="bottom" 
+								              title="You could have done something, why is it you want a note?"/>							      
 							   </div>
 							   <div class="col-sm-3"></div>
 						   </div>
 						   <div class="form-group">
 							   <div class="col-sm-3"></div>
 							   <div class="col-sm-6">
-							      <form:input type="text" class="form-control no-border" path="noteMsg" placeholder="A keynote"/>
+							      <form:input type="text" class="form-control no-border" path="noteMsg" placeholder="A keynote"
+   							      			  data-toggle="tooltip" data-placement="bottom" 
+								              title="Place your key note text here"/>
 							   </div>
 							   <div class="col-sm-3"></div>
 						   </div>
 						   <div class="form-group">
 							   <div class="col-sm-3"></div>
 							   <div class="col-sm-6">
-							      <form:input type="text" class="form-control no-border" path="sideNote" placeholder="An expressive side note"/>
+							      <form:input type="text" class="form-control no-border" path="sideNote" placeholder="An expressive side note"
+							      			  data-toggle="tooltip" data-placement="bottom" 
+								              title="You can also tell us elaborately anything with this keynote message?"/>
 							   </div>
 							   <div class="col-sm-3"></div>
 						   </div>
@@ -80,7 +90,17 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <h1>ScratchPad Section</h1>
-                </div>
+                    <div class="pinned note-container">
+						<div class="note">
+							<h3>Pin it!</h3>
+							<p>Great for pinned navigations or just about anything you
+								want to stick.</p>
+							<p>
+								Developed by <a href="http://www.webpop.com">Webpop</a>.
+							</p>
+						</div>
+					</div>
+			    </div>
             </div>
         </div>
     </section>
