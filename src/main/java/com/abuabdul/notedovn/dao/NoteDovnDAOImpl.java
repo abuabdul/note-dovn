@@ -3,7 +3,6 @@ package com.abuabdul.notedovn.dao;
 import static org.springframework.data.mongodb.core.query.Criteria.where;
 import static org.springframework.data.mongodb.core.query.Update.update;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -36,8 +35,7 @@ public class NoteDovnDAOImpl implements NoteDovnDAO {
 
 	@Override
 	public List<ScratchNote> findAll() throws NoteDovnServiceException {
-		// return mongoTemplate.findAll(ScratchNote.class);
-		return Arrays.asList(mongoTemplate.findOne(new Query(where("category").is("Quran")), ScratchNote.class));
+		return mongoTemplate.findAll(ScratchNote.class);
 	}
 
 	@Override

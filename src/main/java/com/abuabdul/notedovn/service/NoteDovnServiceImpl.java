@@ -8,7 +8,6 @@ import com.abuabdul.notedovn.exception.NoteDovnServiceException;
 
 /**
  * @author abuabdul
- *
  */
 public class NoteDovnServiceImpl implements NoteDovnService {
 
@@ -32,5 +31,4 @@ public class NoteDovnServiceImpl implements NoteDovnService {
 	public List<ScratchNote> publishAllScratchNotes() throws NoteDovnServiceException {
 		return noteDovnDAO.findAll();
 	}
-
 }
