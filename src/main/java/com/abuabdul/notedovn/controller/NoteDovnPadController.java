@@ -54,46 +54,19 @@ public class NoteDovnPadController {
 		}
 	}
 
-	@RequestMapping(value = "/secure/scratch/publishNotes.go")
-	public String publishNotes(@ModelAttribute("scratchPadForm") ScratchNote scratchNote, ModelMap model) {
-		log.debug("Entering publishNotes() in " + this.getClass().getName());
-		try {
-			model.addAttribute("scratchPadForm", new ScratchNote());
-			List<NotesFolder> allNotesInFolder = wrapInFolder(noteDovnService.publishAllScratchNotes());
-			// TODO temp arrangement
-			ScratchNote note = new ScratchNote();
-			note.setCategory("sdfdsf");
-			note.setAboutNote("about");
-			note.setNoteMsg("message");
-			note.setReasonNote("reason");
-			note.setSideNote("sidenote");
-			NotesFolder notesFolder = new NotesFolder();
-			notesFolder.set(1, note);
-			ScratchNote note1 = new ScratchNote();
-			note1.setCategory("abbucsdfdsf");
-			notesFolder.set(2, note1);
-			ScratchNote note2 = new ScratchNote();
-			note2.setCategory("12323sdfdsf");
-			notesFolder.set(3, note2);
-			allNotesInFolder.add(notesFolder);
-			model.addAttribute("notesFolder", allNotesInFolder);
-			return "notedovnPad";
-		} catch (NoteDovnServiceException ndse) {
-			log.debug("NoteDovnServiceException - " + ndse.getMessage());
-			throw new NoteDovnException(ndse.getMessage());
-		}
-	}
-
 	protected List<NotesFolder> wrapInFolder(List<ScratchNote> notes) {
 		List<NotesFolder> notesFolders = null;
 		if (!isEmpty(notes)) {
 			int size = notes.size();
-			notesFolders = new ArrayList<>((size % 3) == 0 ? size / 3 : size / 3 + 1);
-			for (NotesFolder notesFolder : notesFolders) {
+			int folderSize = (size % 3) == 0 ? size / 3 : size / 3 + 1;
+			notesFolders = new ArrayList<>(folderSize);
+			for (int j = 0; j < folderSize; j++) {
+				NotesFolder folder = new NotesFolder();
 				for (int i = 1; i <= 3; i++) {
-					notesFolder.set(i, when(size - 1, notes));
+					folder.set(i, when(size - 1, notes));
 					size--;
 				}
+				notesFolders.add(folder);
 			}
 		}
 		return notesFolders;

@@ -90,8 +90,6 @@
             <div class="row">
                 <div class="col-xs-12 col-md-12">
                     <h1>Notes</h1>
-                    <c:url var="scratchShowUrl" value="/secure/scratch/publishNotes.go"/>
-                    <a href="${scratchShowUrl}">show All</a>
 			    </div>
 			    <c:if test="${not empty notesFolder}">
 			      <c:forEach items="${notesFolder}" var="folder">
@@ -109,20 +107,20 @@
 						<div class="col-sm-4">
 						   <div class="note">
 						     <a href="#" class="close">&times;</a>
-						      ${folder.twoInTrioNote.category}
-						      ${folder.twoInTrioNote.aboutNote}
-						      ${folder.twoInTrioNote.reasonNote}
-						      ${folder.twoInTrioNote.noteMsg}
+						      ${folder.twoInTrioNote.category} <br>
+						      ${folder.twoInTrioNote.aboutNote} <br>
+						      ${folder.twoInTrioNote.reasonNote} <br>
+						      ${folder.twoInTrioNote.noteMsg} <br>
 						      ${folder.twoInTrioNote.sideNote}
 						   </div>
 						</div>
 						<div class="col-sm-4">
 						   <div class="note">
 						     <a href="#" class="close" data-dismiss="alert">&times;</a>
-						      ${folder.threeInTrioNote.category}
-						      ${folder.threeInTrioNote.aboutNote}
-						      ${folder.threeInTrioNote.reasonNote}
-						      ${folder.threeInTrioNote.noteMsg}
+						      ${folder.threeInTrioNote.category} <br>
+						      ${folder.threeInTrioNote.aboutNote} <br>
+						      ${folder.threeInTrioNote.reasonNote} <br>
+						      ${folder.threeInTrioNote.noteMsg} <br>
 						      ${folder.threeInTrioNote.sideNote}
 						   </div>
 						 </div>
