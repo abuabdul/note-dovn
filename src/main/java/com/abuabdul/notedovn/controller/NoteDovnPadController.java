@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.abuabdul.notedovn.document.folder.NotesFolder;
@@ -34,8 +35,15 @@ public class NoteDovnPadController {
 	@RequestMapping(value = "/scratch/notedovnPad.go")
 	public String notedovnPad(ModelMap model) {
 		log.debug("Entering notedovnPad() in " + this.getClass().getName());
-		model.addAttribute("scratchPadForm", new ScratchNote());
-		return "notedovnPad";
+		try {
+			model.addAttribute("scratchPadForm", new ScratchNote());
+			List<NotesFolder> allNotesInFolder = wrapInFolder(noteDovnService.publishAllScratchNotes());
+			model.addAttribute("notesFolder", allNotesInFolder);
+			return "notedovnPad";
+		} catch (NoteDovnServiceException ndse) {
+			log.debug("NoteDovnServiceException - " + ndse.getMessage());
+			throw new NoteDovnException(ndse.getMessage());
+		}
 	}
 
 	@RequestMapping(value = "/secure/scratch/makeNotes.go")
@@ -54,12 +62,28 @@ public class NoteDovnPadController {
 		}
 	}
 
+	@RequestMapping(value = "/secure/scratch/{id}/removeNotes.go")
+	public String removeScratchNotes(@PathVariable("id") String id, ModelMap model,
+			@ModelAttribute("scratchPadForm") ScratchNote scratchNote) {
+		log.debug("Entering makeScratchNotes() in " + this.getClass().getName());
+		try {
+			scratchNote.setId(id);
+			noteDovnService.strikeScratchNote(scratchNote);
+			model.addAttribute("scratchPadForm", new ScratchNote());
+			List<NotesFolder> allNotesInFolder = wrapInFolder(noteDovnService.publishAllScratchNotes());
+			model.addAttribute("notesFolder", allNotesInFolder);
+			return "notedovnPad";
+		} catch (NoteDovnServiceException ndse) {
+			log.debug("NoteDovnServiceException - " + ndse.getMessage());
+			throw new NoteDovnException(ndse.getMessage());
+		}
+	}
+
 	protected List<NotesFolder> wrapInFolder(List<ScratchNote> notes) {
-		List<NotesFolder> notesFolders = null;
+		int size = notes.size();
+		int folderSize = (size % 3) == 0 ? size / 3 : size / 3 + 1;
+		List<NotesFolder> notesFolders = new ArrayList<>(folderSize);
 		if (!isEmpty(notes)) {
-			int size = notes.size();
-			int folderSize = (size % 3) == 0 ? size / 3 : size / 3 + 1;
-			notesFolders = new ArrayList<>(folderSize);
 			for (int j = 0; j < folderSize; j++) {
 				NotesFolder folder = new NotesFolder();
 				for (int i = 1; i <= 3; i++) {
@@ -73,7 +97,7 @@ public class NoteDovnPadController {
 	}
 
 	private ScratchNote when(int actual, List<ScratchNote> notes) {
-		if (actual >= 0) {
+		if (actual >= 0 && actual < notes.size()) {
 			return notes.get(actual);
 		}
 		return new ScratchNote();

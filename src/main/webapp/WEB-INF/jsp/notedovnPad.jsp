@@ -93,36 +93,46 @@
 			    </div>
 			    <c:if test="${not empty notesFolder}">
 			      <c:forEach items="${notesFolder}" var="folder">
+			        <c:url var="removeScratchPadUrl" value="/secure/scratch"/>
 				    <div class="col-xs-12 col-md-12">
 					    <div class="col-sm-4">
-						   <div class="note">
-						     <a href="#" class="close" data-dismiss="alert">&times;</a>
-						      ${folder.oneInTrioNote.category}<br>
-						      ${folder.oneInTrioNote.aboutNote}<br>
-						      ${folder.oneInTrioNote.reasonNote}<br>
-						      ${folder.oneInTrioNote.noteMsg}<br>
-						      ${folder.oneInTrioNote.sideNote}
-						   </div>
+						     <c:if test="${not empty folder.oneInTrioNote.id}">
+						        <div class="note">
+							      <a href="${removeScratchPadUrl}/${folder.oneInTrioNote.id}/removeNotes.go" class="close" data-dismiss="alert"> &times; </a>
+							      <span class="glyphicon glyphicon-pushpin pull-left"></span><br>
+							      ${folder.oneInTrioNote.category}<br>
+							      ${folder.oneInTrioNote.aboutNote}<br>
+							      ${folder.oneInTrioNote.reasonNote}<br>
+							      ${folder.oneInTrioNote.noteMsg}<br>
+							      ${folder.oneInTrioNote.sideNote}
+							     </div>
+							 </c:if>    
 						</div>
 						<div class="col-sm-4">
-						   <div class="note">
-						     <a href="#" class="close">&times;</a>
-						      ${folder.twoInTrioNote.category} <br>
-						      ${folder.twoInTrioNote.aboutNote} <br>
-						      ${folder.twoInTrioNote.reasonNote} <br>
-						      ${folder.twoInTrioNote.noteMsg} <br>
-						      ${folder.twoInTrioNote.sideNote}
-						   </div>
+						     <c:if test="${not empty folder.twoInTrioNote.id}">
+						        <div class="note">
+							      <a href="${removeScratchPadUrl}/${folder.twoInTrioNote.id}/removeNotes.go" class="close" data-dismiss="alert"> &times; </a>
+							      <span class="glyphicon glyphicon-pushpin pull-left"></span><br>
+							      ${folder.twoInTrioNote.category} <br>
+							      ${folder.twoInTrioNote.aboutNote} <br>
+							      ${folder.twoInTrioNote.reasonNote} <br>
+							      ${folder.twoInTrioNote.noteMsg} <br>
+							      ${folder.twoInTrioNote.sideNote}
+							     </div> 
+						     </c:if> 
 						</div>
 						<div class="col-sm-4">
-						   <div class="note">
-						     <a href="#" class="close" data-dismiss="alert">&times;</a>
-						      ${folder.threeInTrioNote.category} <br>
-						      ${folder.threeInTrioNote.aboutNote} <br>
-						      ${folder.threeInTrioNote.reasonNote} <br>
-						      ${folder.threeInTrioNote.noteMsg} <br>
-						      ${folder.threeInTrioNote.sideNote}
-						   </div>
+						   <c:if test="${not empty folder.threeInTrioNote.id}">
+							   <div class="note">
+							      <a href="${removeScratchPadUrl}/${folder.threeInTrioNote.id}/removeNotes.go" class="close" data-dismiss="alert"> &times; </a>
+							      <span class="glyphicon glyphicon-pushpin pull-left"></span><br>
+							      ${folder.threeInTrioNote.category} <br>
+							      ${folder.threeInTrioNote.aboutNote} <br>
+							      ${folder.threeInTrioNote.reasonNote} <br>
+							      ${folder.threeInTrioNote.noteMsg} <br>
+							      ${folder.threeInTrioNote.sideNote}
+							   </div>
+							</c:if>   
 						 </div>
 				    </div>
 				   </c:forEach> 
