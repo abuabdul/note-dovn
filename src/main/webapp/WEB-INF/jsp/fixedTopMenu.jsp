@@ -1,4 +1,7 @@
 <%@ include file="/WEB-INF/jsp/includes/siteTags.jsp"%>
+<script type="text/javascript">
+	baseURL = '<spring:eval expression="@propertyConfigurer.getProperty(\'notedovn.app.base.url\')" />';
+</script>
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">

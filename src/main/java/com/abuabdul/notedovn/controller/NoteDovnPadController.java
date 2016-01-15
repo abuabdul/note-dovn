@@ -13,6 +13,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.abuabdul.notedovn.document.folder.NotesFolder;
 import com.abuabdul.notedovn.document.model.ScratchNote;
@@ -69,9 +70,18 @@ public class NoteDovnPadController {
 		try {
 			scratchNote.setId(id);
 			noteDovnService.strikeScratchNote(scratchNote);
-			model.addAttribute("scratchPadForm", new ScratchNote());
-			List<NotesFolder> allNotesInFolder = wrapInFolder(noteDovnService.publishAllScratchNotes());
-			model.addAttribute("notesFolder", allNotesInFolder);
+			return "notedovnPad";
+		} catch (NoteDovnServiceException ndse) {
+			log.debug("NoteDovnServiceException - " + ndse.getMessage());
+			throw new NoteDovnException(ndse.getMessage());
+		}
+	}
+
+	@RequestMapping(value = "/secure/scratch/{id}/updateNote.go")
+	public String updateScratchNotes(@PathVariable String id, @RequestParam("name") String field, ModelMap model) {
+		log.debug("Entering updateScratchNotes() in " + this.getClass().getName());
+		try {
+			noteDovnService.updateScratchNote(id, field, "");
 			return "notedovnPad";
 		} catch (NoteDovnServiceException ndse) {
 			log.debug("NoteDovnServiceException - " + ndse.getMessage());

@@ -31,4 +31,10 @@ public class NoteDovnServiceImpl implements NoteDovnService {
 	public List<ScratchNote> publishAllScratchNotes() throws NoteDovnServiceException {
 		return noteDovnDAO.findAll();
 	}
+
+	@Override
+	public void updateScratchNote(String id, String key, String value) throws NoteDovnServiceException {
+		noteDovnDAO.updateNote(id, key, value);
+
+	}
 }

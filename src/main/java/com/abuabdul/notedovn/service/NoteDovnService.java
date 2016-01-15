@@ -15,6 +15,8 @@ public interface NoteDovnService {
 
 	void strikeScratchNote(ScratchNote note) throws NoteDovnServiceException;
 
+	void updateScratchNote(String id, String key, String value) throws NoteDovnServiceException;
+
 	List<ScratchNote> publishAllScratchNotes() throws NoteDovnServiceException;
 
 }

@@ -1,6 +1,7 @@
 package com.abuabdul.notedovn.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.PropertiesFactoryBean;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -34,6 +35,13 @@ public class NoteDovnConfig {
 		propertyConfigurer.setSearchSystemEnvironment(true);
 		propertyConfigurer.setSystemPropertiesMode(PropertyPlaceholderConfigurer.SYSTEM_PROPERTIES_MODE_OVERRIDE);
 		return propertyConfigurer;
+	}
+
+	@Bean
+	public PropertiesFactoryBean propertyConfigurer() {
+		PropertiesFactoryBean bean = new PropertiesFactoryBean();
+		bean.setLocation(new ClassPathResource("Appconfig.properties"));
+		return bean;
 	}
 
 	@Bean
