@@ -14,4 +14,7 @@
 <script src="<c:url value='/resources/js/jquery.easing.min.js'/>"></script>
 <script src="<c:url value='/resources/js/scrolling-nav.js'/>"></script>
 
+<!-- bootstrap editable -->
+<script src="<c:url value='/resources/js/bootstrap-editable.min.js'/>"></script>
+
 <script src="<c:url value='/resources/js/note-dovn.js'/>"></script>

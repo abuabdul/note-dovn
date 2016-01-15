@@ -1,13 +1,3 @@
-.note {
-    text-decoration: none;
-    background: #FFF none repeat scroll 0% 0%;
-    display: block;
-    padding: 20px;
-    box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
-    transform: rotate(-6deg);
-    font-size: 16px;
-}
-
 .brand-logo{
 	color: #26ADA1;
 }
@@ -26,6 +16,23 @@
 	color: #3C5B45;
 }
 
+.note {
+    text-decoration: none;
+    background: #FFF none repeat scroll 0% 0%;
+    display: block;
+    padding: 20px;
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+    transform: rotate(-6deg);
+    font-size: 16px;
+}
+
+.glyphicon.medium {
+	font-size: 27px;
+}
+
+#errorPage{
+	color: #B74934;
+}
 /* Override theme css */
 body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -67,6 +74,15 @@ body {
 
 .tooltip.top .tooltip-arrow {
 	border-top-color: #3C5B45;
+}
+
+.editable-click, a.editable-click, a.editable-click:hover {
+    text-decoration: none;
+    border-bottom: 0px;
+}
+
+a {
+	color: inherit;
 }
  
 /* 

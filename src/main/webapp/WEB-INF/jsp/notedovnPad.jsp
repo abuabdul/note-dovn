@@ -100,11 +100,11 @@
 						        <div class="note">
 							      <a id="${removeScratchPadUrl}/${folder.oneInTrioNote.id}/removeNotes.go" class="close remove" data-dismiss="alert"> &times; </a>
 							      <span class="glyphicon glyphicon-pushpin pull-left"></span><br>
-							      ${folder.oneInTrioNote.category}<br>
-							      ${folder.oneInTrioNote.aboutNote}<br>
-							      ${folder.oneInTrioNote.reasonNote}<br>
-							      ${folder.oneInTrioNote.noteMsg}<br>
-							      ${folder.oneInTrioNote.sideNote}
+							      <a href="#" class="editable">${folder.oneInTrioNote.category}</a><br>
+							      <a href="#" class="editable">${folder.oneInTrioNote.aboutNote}</a><br>
+							      <a href="#" class="editable">${folder.oneInTrioNote.reasonNote}</a><br>
+							      <a href="#" class="editable">${folder.oneInTrioNote.noteMsg}</a><br>
+							      <a href="#" class="editable">${folder.oneInTrioNote.sideNote}</a>
 							     </div>
 							 </c:if>    
 						</div>
@@ -113,11 +113,11 @@
 						        <div class="note">
 							      <a id="${removeScratchPadUrl}/${folder.twoInTrioNote.id}/removeNotes.go" class="close remove" data-dismiss="alert"> &times; </a>
 							      <span class="glyphicon glyphicon-pushpin pull-left"></span><br>
-							      ${folder.twoInTrioNote.category} <br>
-							      ${folder.twoInTrioNote.aboutNote} <br>
-							      ${folder.twoInTrioNote.reasonNote} <br>
-							      ${folder.twoInTrioNote.noteMsg} <br>
-							      ${folder.twoInTrioNote.sideNote}
+							      <a href="#" class="editable">${folder.twoInTrioNote.category}</a><br>
+							      <a href="#" class="editable">${folder.twoInTrioNote.aboutNote}</a><br>
+							      <a href="#" class="editable">${folder.twoInTrioNote.reasonNote}</a><br>
+							      <a href="#" class="editable">${folder.twoInTrioNote.noteMsg}</a><br>
+							      <a href="#" class="editable">${folder.twoInTrioNote.sideNote}</a>
 							     </div> 
 						     </c:if> 
 						</div>
@@ -126,11 +126,11 @@
 							   <div class="note">
    							      <a id="${removeScratchPadUrl}/${folder.threeInTrioNote.id}/removeNotes.go" class="close remove" data-dismiss="alert"> &times; </a>
 							      <span class="glyphicon glyphicon-pushpin pull-left"></span><br>
-							      ${folder.threeInTrioNote.category} <br>
-							      ${folder.threeInTrioNote.aboutNote} <br>
-							      ${folder.threeInTrioNote.reasonNote} <br>
-							      ${folder.threeInTrioNote.noteMsg} <br>
-							      ${folder.threeInTrioNote.sideNote}
+							      <a href="#" class="editable">${folder.threeInTrioNote.category}</a><br>
+							      <a href="#" class="editable">${folder.threeInTrioNote.aboutNote}</a><br>
+							      <a href="#" class="editable">${folder.threeInTrioNote.reasonNote}</a><br>
+							      <a href="#" class="editable">${folder.threeInTrioNote.noteMsg}</a><br>
+							      <a href="#" class="editable">${folder.threeInTrioNote.sideNote}</a>
 							   </div>
 							</c:if>   
 						 </div>

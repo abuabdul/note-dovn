@@ -27,8 +27,9 @@
 	<bean class="com.abuabdul.notedovn.exception.NoteDovnExceptionResolver">
 	    <property name="exceptionMappings">
 	        <props>
-	        <!-- Map apt error views -->
+	            <!-- Map apt error views -->
 	            <prop key="NoteDovnException">generic/error</prop>
+	            <prop key="NoteDovnServiceException">generic/error</prop>
 	        </props>
 	    </property>
 	    <property name="defaultErrorView" value="generic/error" />

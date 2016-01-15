@@ -54,12 +54,8 @@ public class NoteDovnPadController {
 			model.addAttribute("scratchPadForm", new ScratchNote());
 			model.addAttribute("saveNoteDetails", true);
 			List<NotesFolder> allNotesInFolder = wrapInFolder(noteDovnService.publishAllScratchNotes());
-			// TEST
-			throw new NoteDovnException();
-			/*
-			 * model.addAttribute("notesFolder", allNotesInFolder); return
-			 * "notedovnPad";
-			 */
+			model.addAttribute("notesFolder", allNotesInFolder);
+			return "notedovnPad";
 		} catch (NoteDovnServiceException ndse) {
 			log.debug("NoteDovnServiceException - " + ndse.getMessage());
 			throw new NoteDovnException(ndse.getMessage());

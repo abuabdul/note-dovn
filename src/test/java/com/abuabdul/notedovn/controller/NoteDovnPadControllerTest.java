@@ -46,6 +46,14 @@ public class NoteDovnPadControllerTest {
 	public void testMakeScratchNotes() throws Exception {
 		mockMvc.perform(post("/secure/scratch/makeNotes.go").sessionAttr("scratchPadForm", new ScratchNote()))
 				.andExpect(status().isOk()).andExpect(model().attributeExists("scratchPadForm"))
-				.andExpect(model().attributeExists("saveNoteDetails")).andExpect(view().name("notedovnPad"));
+				.andExpect(model().attributeExists("saveNoteDetails")).andExpect(model().attributeExists("notesFolder"))
+				.andExpect(view().name("notedovnPad"));
+	}
+
+	@Test(groups = "integration")
+	public void testRemoveScratchNotes() throws Exception {
+		mockMvc.perform(post("/secure/scratch/345676/removeNotes.go").sessionAttr("scratchPadForm", new ScratchNote()))
+				.andExpect(status().isOk()).andExpect(model().attributeExists("scratchPadForm"))
+				.andExpect(model().attributeExists("notesFolder")).andExpect(view().name("notedovnPad"));
 	}
 }

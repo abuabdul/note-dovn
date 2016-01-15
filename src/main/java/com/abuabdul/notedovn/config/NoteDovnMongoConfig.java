@@ -37,5 +37,4 @@ public class NoteDovnMongoConfig {
 	public MongoTemplate mongoTemplate() throws Exception {
 		return new MongoTemplate(mongoDbFactory());
 	}
-
 }
