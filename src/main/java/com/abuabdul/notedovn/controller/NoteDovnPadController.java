@@ -63,9 +63,9 @@ public class NoteDovnPadController {
 	}
 
 	@RequestMapping(value = "/secure/scratch/{id}/removeNotes.go")
-	public String removeScratchNotes(@PathVariable("id") String id, ModelMap model,
+	public String removeScratchNotes(@PathVariable String id, ModelMap model,
 			@ModelAttribute("scratchPadForm") ScratchNote scratchNote) {
-		log.debug("Entering makeScratchNotes() in " + this.getClass().getName());
+		log.debug("Entering removeScratchNotes() in " + this.getClass().getName());
 		try {
 			scratchNote.setId(id);
 			noteDovnService.strikeScratchNote(scratchNote);

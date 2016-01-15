@@ -98,7 +98,7 @@
 					    <div class="col-sm-4">
 						     <c:if test="${not empty folder.oneInTrioNote.id}">
 						        <div class="note">
-							      <a href="${removeScratchPadUrl}/${folder.oneInTrioNote.id}/removeNotes.go" class="close" data-dismiss="alert"> &times; </a>
+							      <a id="${removeScratchPadUrl}/${folder.oneInTrioNote.id}/removeNotes.go" class="close remove" data-dismiss="alert"> &times; </a>
 							      <span class="glyphicon glyphicon-pushpin pull-left"></span><br>
 							      ${folder.oneInTrioNote.category}<br>
 							      ${folder.oneInTrioNote.aboutNote}<br>
@@ -111,7 +111,7 @@
 						<div class="col-sm-4">
 						     <c:if test="${not empty folder.twoInTrioNote.id}">
 						        <div class="note">
-							      <a href="${removeScratchPadUrl}/${folder.twoInTrioNote.id}/removeNotes.go" class="close" data-dismiss="alert"> &times; </a>
+							      <a id="${removeScratchPadUrl}/${folder.twoInTrioNote.id}/removeNotes.go" class="close remove" data-dismiss="alert"> &times; </a>
 							      <span class="glyphicon glyphicon-pushpin pull-left"></span><br>
 							      ${folder.twoInTrioNote.category} <br>
 							      ${folder.twoInTrioNote.aboutNote} <br>
@@ -124,7 +124,7 @@
 						<div class="col-sm-4">
 						   <c:if test="${not empty folder.threeInTrioNote.id}">
 							   <div class="note">
-							      <a href="${removeScratchPadUrl}/${folder.threeInTrioNote.id}/removeNotes.go" class="close" data-dismiss="alert"> &times; </a>
+   							      <a id="${removeScratchPadUrl}/${folder.threeInTrioNote.id}/removeNotes.go" class="close remove" data-dismiss="alert"> &times; </a>
 							      <span class="glyphicon glyphicon-pushpin pull-left"></span><br>
 							      ${folder.threeInTrioNote.category} <br>
 							      ${folder.threeInTrioNote.aboutNote} <br>

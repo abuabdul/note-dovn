@@ -1,33 +1,16 @@
 <%@ include file="/WEB-INF/jsp/includes/siteTags.jsp"%>
-		<!-- Page Content -->
-		<div id="page-content-wrapper">
-
-			<div class="container-fluid">
-		<div class="row">
-			<div class="col-lg-12">
-				<span> <a href="#menu-toggle" class="btn btn-xs btn-default"
-					id="menu-toggle">Toggle Menu</a>
-				</span>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-12">
-				<h1 class="pull-right">FourT</h1>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="box box-primary innerpage-wrapper">
-					<div class="box-body">
-						<div class="alert alert-danger">
-							<i class="glyphicon glyphicon-warning-sign bigger"></i>&nbsp; 
-							<span>Some Error Occurred. Please try again.</span> <br>
-							<div>${exception}</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-		</div>
-		<!-- /#page-content-wrapper -->
+    <!-- Error Page Section -->
+    <section id="errorPage" class="errorpage-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+	                    <h1>Error</h1>
+	                    <p><strong>Something went wrong!!!</strong></p>
+	                    <a class="navbar-brand page-scroll" href="<c:url value='/scratch/notedovnPad.go'/>">
+		                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+		                    <span class="brand-logo">Go Back Home</span> 
+                 		</a>
+                </div>
+            </div>
+        </div>
+    </section>
