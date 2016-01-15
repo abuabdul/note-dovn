@@ -5,8 +5,11 @@ import static org.springframework.util.CollectionUtils.isEmpty;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.abuabdul.notedovn.document.folder.NotesFolder;
 import com.abuabdul.notedovn.document.model.ScratchNote;
@@ -77,12 +81,18 @@ public class NoteDovnPadController {
 		}
 	}
 
-	@RequestMapping(value = "/secure/scratch/{id}/updateNote.go")
-	public String updateScratchNotes(@PathVariable String id, @RequestParam("name") String field, ModelMap model) {
+	@RequestMapping(value = "/secure/scratch/updateNote.go", produces = "application/json")
+	@ResponseBody
+	public String updateScratchNotes(HttpServletResponse response, @RequestParam String pk, @RequestParam String name,
+			@RequestParam String value) {
 		log.debug("Entering updateScratchNotes() in " + this.getClass().getName());
 		try {
-			noteDovnService.updateScratchNote(id, field, "");
-			return "notedovnPad";
+			response.setStatus(HttpServletResponse.SC_OK);
+			noteDovnService.updateScratchNote(pk, name, value);
+			JSONObject json = new JSONObject();
+			json.put("status", "error");
+			json.put("msg", "cannot update");
+			return json.toString();
 		} catch (NoteDovnServiceException ndse) {
 			log.debug("NoteDovnServiceException - " + ndse.getMessage());
 			throw new NoteDovnException(ndse.getMessage());

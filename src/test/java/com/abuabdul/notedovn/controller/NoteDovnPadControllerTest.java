@@ -52,14 +52,14 @@ public class NoteDovnPadControllerTest {
 
 	@Test(groups = "integration")
 	public void testRemoveScratchNotes() throws Exception {
-		mockMvc.perform(post("/secure/scratch/345676/removeNotes.go")).andExpect(status().isOk())
-				.andExpect(view().name("notedovnPad"));
+		mockMvc.perform(post("/secure/scratch/345676/removeNotes.go").sessionAttr("scratchPadForm", new ScratchNote()))
+				.andExpect(status().isOk()).andExpect(view().name("notedovnPad"));
 	}
 
 	@Test(groups = "integration", enabled = false)
 	public void testUpdateScratchNotes() throws Exception {
-		mockMvc.perform(post("/secure/scratch/456789/updateNote.go")).andExpect(status().isOk())
+		mockMvc.perform(post("/secure/scratch/updateNote.go").sessionAttr("scratchPadForm", new ScratchNote())
+				.param("name", "any_name").param("pk", "any_id").param("value", "any_value")).andExpect(status().isOk())
 				.andExpect(view().name("notedovnPad"));
 	}
-
 }

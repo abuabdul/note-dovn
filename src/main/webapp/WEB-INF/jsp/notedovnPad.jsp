@@ -100,11 +100,11 @@
 						        <div class="note">
 							      <a id="${removeScratchPadUrl}/${folder.oneInTrioNote.id}/removeNotes.go" class="close remove" data-dismiss="alert"> &times; </a>
 							      <span class="glyphicon glyphicon-pushpin pull-left"></span><br>
-							      <a href="#" class="editable">${folder.oneInTrioNote.category}</a><br>
-							      <a href="#" class="editable">${folder.oneInTrioNote.aboutNote}</a><br>
-							      <a href="#" class="editable">${folder.oneInTrioNote.reasonNote}</a><br>
-							      <a href="#" class="editable">${folder.oneInTrioNote.noteMsg}</a><br>
-							      <a href="#" class="editable">${folder.oneInTrioNote.sideNote}</a>
+							      <a href="#" class="editable" id="category" data-pk="${folder.oneInTrioNote.id}">${folder.oneInTrioNote.category}</a><br>
+							      <a href="#" class="editable" id="aboutNote" data-pk="${folder.oneInTrioNote.id}">${folder.oneInTrioNote.aboutNote}</a><br>
+							      <a href="#" class="editable" id="reasonNote" data-pk="${folder.oneInTrioNote.id}">${folder.oneInTrioNote.reasonNote}</a><br>
+							      <a href="#" class="editable" id="noteMsg" data-pk="${folder.oneInTrioNote.id}">${folder.oneInTrioNote.noteMsg}</a><br>
+							      <a href="#" class="editable" id="sideNote" data-pk="${folder.oneInTrioNote.id}">${folder.oneInTrioNote.sideNote}</a>
 							     </div>
 							 </c:if>    
 						</div>
@@ -113,11 +113,11 @@
 						        <div class="note">
 							      <a id="${removeScratchPadUrl}/${folder.twoInTrioNote.id}/removeNotes.go" class="close remove" data-dismiss="alert"> &times; </a>
 							      <span class="glyphicon glyphicon-pushpin pull-left"></span><br>
-							      <a href="#" class="editable">${folder.twoInTrioNote.category}</a><br>
-							      <a href="#" class="editable">${folder.twoInTrioNote.aboutNote}</a><br>
-							      <a href="#" class="editable">${folder.twoInTrioNote.reasonNote}</a><br>
-							      <a href="#" class="editable">${folder.twoInTrioNote.noteMsg}</a><br>
-							      <a href="#" class="editable">${folder.twoInTrioNote.sideNote}</a>
+							      <a href="#" class="editable" id="category" data-pk="${folder.twoInTrioNote.id}">${folder.twoInTrioNote.category}</a><br>
+							      <a href="#" class="editable" id="aboutNote" data-pk="${folder.twoInTrioNote.id}">${folder.twoInTrioNote.aboutNote}</a><br>
+							      <a href="#" class="editable" id="reasonNote" data-pk="${folder.twoInTrioNote.id}">${folder.twoInTrioNote.reasonNote}</a><br>
+							      <a href="#" class="editable" id="noteMsg" data-pk="${folder.twoInTrioNote.id}">${folder.twoInTrioNote.noteMsg}</a><br>
+							      <a href="#" class="editable" id="sideNote" data-pk="${folder.twoInTrioNote.id}">${folder.twoInTrioNote.sideNote}</a>
 							     </div> 
 						     </c:if> 
 						</div>
@@ -126,11 +126,11 @@
 							   <div class="note">
    							      <a id="${removeScratchPadUrl}/${folder.threeInTrioNote.id}/removeNotes.go" class="close remove" data-dismiss="alert"> &times; </a>
 							      <span class="glyphicon glyphicon-pushpin pull-left"></span><br>
-							      <a href="#" class="editable">${folder.threeInTrioNote.category}</a><br>
-							      <a href="#" class="editable">${folder.threeInTrioNote.aboutNote}</a><br>
-							      <a href="#" class="editable">${folder.threeInTrioNote.reasonNote}</a><br>
-							      <a href="#" class="editable">${folder.threeInTrioNote.noteMsg}</a><br>
-							      <a href="#" class="editable">${folder.threeInTrioNote.sideNote}</a>
+							      <a href="#" class="editable" id="category" data-pk="${folder.threeInTrioNote.id}">${folder.threeInTrioNote.category}</a><br>
+							      <a href="#" class="editable" id="aboutNote" data-pk="${folder.threeInTrioNote.id}">${folder.threeInTrioNote.aboutNote}</a><br>
+							      <a href="#" class="editable" id="reasonNote" data-pk="${folder.threeInTrioNote.id}">${folder.threeInTrioNote.reasonNote}</a><br>
+							      <a href="#" class="editable" id="noteMsg" data-pk="${folder.threeInTrioNote.id}">${folder.threeInTrioNote.noteMsg}</a><br>
+							      <a href="#" class="editable" id="sideNote" data-pk="${folder.threeInTrioNote.id}">${folder.threeInTrioNote.sideNote}</a>
 							   </div>
 							</c:if>   
 						 </div>
