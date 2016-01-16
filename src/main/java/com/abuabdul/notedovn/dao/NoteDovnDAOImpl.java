@@ -1,12 +1,13 @@
 package com.abuabdul.notedovn.dao;
 
+import static com.abuabdul.notedovn.util.NoteDovnUtil.getUTCDateTime;
 import static org.springframework.data.mongodb.core.query.Criteria.where;
-import static org.springframework.data.mongodb.core.query.Update.update;
 
 import java.util.List;
 
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 
 import com.abuabdul.notedovn.document.model.ScratchNote;
 import com.abuabdul.notedovn.exception.NoteDovnServiceException;
@@ -40,7 +41,10 @@ public class NoteDovnDAOImpl implements NoteDovnDAO {
 
 	@Override
 	public void updateNote(String id, String key, Object val) throws NoteDovnServiceException {
-		mongoTemplate.updateFirst(query(id), update(key, val), ScratchNote.class);
+		Update update = new Update();
+		update.set(key, val);
+		update.set("updatedDate", getUTCDateTime());
+		mongoTemplate.updateFirst(query(id), update, ScratchNote.class);
 	}
 
 	@Override

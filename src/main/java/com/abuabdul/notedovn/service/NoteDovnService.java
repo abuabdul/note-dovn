@@ -1,6 +1,6 @@
 package com.abuabdul.notedovn.service;
 
-import java.util.List;
+import java.util.LinkedList;
 
 import com.abuabdul.notedovn.document.model.ScratchNote;
 import com.abuabdul.notedovn.exception.NoteDovnServiceException;
@@ -17,6 +17,6 @@ public interface NoteDovnService {
 
 	void updateScratchNote(String id, String key, String value) throws NoteDovnServiceException;
 
-	List<ScratchNote> publishAllScratchNotes() throws NoteDovnServiceException;
+	LinkedList<ScratchNote> publishAllScratchNotes() throws NoteDovnServiceException;
 
 }

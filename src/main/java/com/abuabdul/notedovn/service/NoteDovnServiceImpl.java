@@ -1,6 +1,6 @@
 package com.abuabdul.notedovn.service;
 
-import java.util.List;
+import java.util.LinkedList;
 
 import com.abuabdul.notedovn.dao.NoteDovnDAO;
 import com.abuabdul.notedovn.document.model.ScratchNote;
@@ -28,8 +28,8 @@ public class NoteDovnServiceImpl implements NoteDovnService {
 	}
 
 	@Override
-	public List<ScratchNote> publishAllScratchNotes() throws NoteDovnServiceException {
-		return noteDovnDAO.findAll();
+	public LinkedList<ScratchNote> publishAllScratchNotes() throws NoteDovnServiceException {
+		return new LinkedList<ScratchNote>(noteDovnDAO.findAll());
 	}
 
 	@Override

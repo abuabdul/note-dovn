@@ -1,9 +1,9 @@
 package com.abuabdul.notedovn.document.model;
 
+import static com.abuabdul.notedovn.util.NoteDovnUtil.getUTCDateTime;
+
 import java.util.Date;
 
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -129,10 +129,6 @@ public class ScratchNote {
 	 */
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
-	}
-
-	public Date getUTCDateTime() {
-		return new DateTime(DateTimeZone.UTC).toDate();
 	}
 
 	/**

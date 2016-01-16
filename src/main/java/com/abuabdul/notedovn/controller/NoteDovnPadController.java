@@ -1,9 +1,10 @@
 package com.abuabdul.notedovn.controller;
 
-import static org.springframework.util.CollectionUtils.isEmpty;
+import static com.abuabdul.notedovn.util.NoteDovnUtil.isRestricted;
+import static com.abuabdul.notedovn.util.NoteDovnUtil.wrapInFolder;
+import static org.apache.commons.lang3.StringUtils.isEmpty;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -42,7 +43,7 @@ public class NoteDovnPadController {
 		log.debug("Entering notedovnPad() in " + this.getClass().getName());
 		try {
 			model.addAttribute("scratchPadForm", new ScratchNote());
-			List<NotesFolder> allNotesInFolder = wrapInFolder(noteDovnService.publishAllScratchNotes());
+			LinkedList<NotesFolder> allNotesInFolder = wrapInFolder(noteDovnService.publishAllScratchNotes());
 			model.addAttribute("notesFolder", allNotesInFolder);
 			return "notedovnPad";
 		} catch (NoteDovnServiceException ndse) {
@@ -58,7 +59,7 @@ public class NoteDovnPadController {
 			noteDovnService.makeScratchNote(scratchNote);
 			model.addAttribute("scratchPadForm", new ScratchNote());
 			model.addAttribute("saveNoteDetails", true);
-			List<NotesFolder> allNotesInFolder = wrapInFolder(noteDovnService.publishAllScratchNotes());
+			LinkedList<NotesFolder> allNotesInFolder = wrapInFolder(noteDovnService.publishAllScratchNotes());
 			model.addAttribute("notesFolder", allNotesInFolder);
 			return "notedovnPad";
 		} catch (NoteDovnServiceException ndse) {
@@ -88,39 +89,23 @@ public class NoteDovnPadController {
 		log.debug("Entering updateScratchNotes() in " + this.getClass().getName());
 		try {
 			response.setStatus(HttpServletResponse.SC_OK);
-			noteDovnService.updateScratchNote(pk, name, value);
 			JSONObject json = new JSONObject();
-			json.put("status", "error");
-			json.put("msg", "cannot update");
+			if (isEmpty(name)) {
+				json.put("status", "error");
+				json.put("msg", "cannot update now");
+				return json.toString();
+			}
+			if (isRestricted(name)) {
+				json.put("status", "error");
+				json.put("msg", "cannot be empty");
+				return json.toString();
+			}
+			noteDovnService.updateScratchNote(pk, name, value);
+			json.put("status", "success");
 			return json.toString();
 		} catch (NoteDovnServiceException ndse) {
 			log.debug("NoteDovnServiceException - " + ndse.getMessage());
 			throw new NoteDovnException(ndse.getMessage());
 		}
 	}
-
-	protected List<NotesFolder> wrapInFolder(List<ScratchNote> notes) {
-		int size = notes.size();
-		int folderSize = (size % 3) == 0 ? size / 3 : size / 3 + 1;
-		List<NotesFolder> notesFolders = new ArrayList<>(folderSize);
-		if (!isEmpty(notes)) {
-			for (int j = 0; j < folderSize; j++) {
-				NotesFolder folder = new NotesFolder();
-				for (int i = 1; i <= 3; i++) {
-					folder.set(i, when(size - 1, notes));
-					size--;
-				}
-				notesFolders.add(folder);
-			}
-		}
-		return notesFolders;
-	}
-
-	private ScratchNote when(int actual, List<ScratchNote> notes) {
-		if (actual >= 0 && actual < notes.size()) {
-			return notes.get(actual);
-		}
-		return new ScratchNote();
-	}
-
 }
