@@ -9,6 +9,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -56,10 +57,10 @@ public class NoteDovnPadControllerTest {
 				.andExpect(status().isOk()).andExpect(view().name("notedovnPad"));
 	}
 
-	@Test(groups = "integration", enabled = false)
+	@Test(groups = "integration")
 	public void testUpdateScratchNotes() throws Exception {
-		mockMvc.perform(post("/secure/scratch/updateNote.go").sessionAttr("scratchPadForm", new ScratchNote())
-				.param("name", "any_name").param("pk", "any_id").param("value", "any_value")).andExpect(status().isOk())
-				.andExpect(view().name("notedovnPad"));
+		mockMvc.perform(post("/secure/scratch/updateNote.go").param("name", "any_name").param("pk", "any_id")
+				.param("value", "any_value").contentType(MediaType.APPLICATION_JSON).content("json_string"))
+				.andExpect(status().isOk()).andReturn();
 	}
 }

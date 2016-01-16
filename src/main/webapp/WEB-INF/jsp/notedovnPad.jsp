@@ -105,8 +105,6 @@
 							      <a href="#" class="editable" id="reasonNote" data-pk="${folder.oneInTrioNote.id}">${folder.oneInTrioNote.reasonNote}</a><br>
 							      <a href="#" class="editable" id="noteMsg" data-pk="${folder.oneInTrioNote.id}">${folder.oneInTrioNote.noteMsg}</a><br>
 							      <a href="#" class="editable" id="sideNote" data-pk="${folder.oneInTrioNote.id}">${folder.oneInTrioNote.sideNote}</a>
-							      
-							      <a href="#" class="editable" id="sideNote" data-pk="${folder.oneInTrioNote.id}">${folder.oneInTrioNote.updatedDate}</a>
 							     </div>
 							 </c:if>    
 						</div>
@@ -120,8 +118,6 @@
 							      <a href="#" class="editable" id="reasonNote" data-pk="${folder.twoInTrioNote.id}">${folder.twoInTrioNote.reasonNote}</a><br>
 							      <a href="#" class="editable" id="noteMsg" data-pk="${folder.twoInTrioNote.id}">${folder.twoInTrioNote.noteMsg}</a><br>
 							      <a href="#" class="editable" id="sideNote" data-pk="${folder.twoInTrioNote.id}">${folder.twoInTrioNote.sideNote}</a>
-							      
-							      <a href="#" class="editable" id="sideNote" data-pk="${folder.twoInTrioNote.id}">${folder.oneInTrioNote.updatedDate}</a>
 							     </div> 
 						     </c:if> 
 						</div>
@@ -135,8 +131,6 @@
 							      <a href="#" class="editable" id="reasonNote" data-pk="${folder.threeInTrioNote.id}">${folder.threeInTrioNote.reasonNote}</a><br>
 							      <a href="#" class="editable" id="noteMsg" data-pk="${folder.threeInTrioNote.id}">${folder.threeInTrioNote.noteMsg}</a><br>
 							      <a href="#" class="editable" id="sideNote" data-pk="${folder.threeInTrioNote.id}">${folder.threeInTrioNote.sideNote}</a>
-							      
-							      <a href="#" class="editable" id="sideNote" data-pk="${folder.threeInTrioNote.id}">${folder.oneInTrioNote.updatedDate}</a>
 							   </div>
 							</c:if>   
 						 </div>
@@ -157,6 +151,7 @@
                 <div class="col-xs-12 col-md-12">
                     <h1>About Section</h1>
                     <a class="btn btn-default page-scroll" href="#scratchform"><span class="glyphicon glyphicon-triangle-top scroll-up"></span></a>
+                    <!-- write about -->
                 </div>
             </div>
         </div>

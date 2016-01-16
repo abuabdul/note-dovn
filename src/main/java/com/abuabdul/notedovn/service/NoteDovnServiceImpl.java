@@ -35,6 +35,5 @@ public class NoteDovnServiceImpl implements NoteDovnService {
 	@Override
 	public void updateScratchNote(String id, String key, String value) throws NoteDovnServiceException {
 		noteDovnDAO.updateNote(id, key, value);
-
 	}
 }

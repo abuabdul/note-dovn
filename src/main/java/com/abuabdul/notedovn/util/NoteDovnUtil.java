@@ -36,7 +36,6 @@ public class NoteDovnUtil {
 		int folderSize = (size % 3) == 0 ? size / 3 : size / 3 + 1;
 		LinkedList<NotesFolder> notesFolders = new LinkedList<>(new ArrayList<NotesFolder>(folderSize));
 		if (!isEmpty(notes)) {
-			// group
 			notes = groupByCategoryOrDate(notes);
 			for (int j = 0; j < folderSize; j++) {
 				NotesFolder folder = new NotesFolder();
@@ -57,7 +56,7 @@ public class NoteDovnUtil {
 		return new ScratchNote();
 	}
 
-	public static boolean isRestricted(String name) {
+	public static boolean isRestrictedField(String name) {
 		if (isNotEmpty(name)) {
 			return name.equalsIgnoreCase("aboutNote") ? true : name.equalsIgnoreCase("noteMsg") ? true : false;
 		}
@@ -111,8 +110,8 @@ public class NoteDovnUtil {
 	private static Ordering<ScratchNote> orderingCategory = Ordering.natural().reverse()
 			.onResultOf(new Function<ScratchNote, String>() {
 				@Override
-				public String apply(ScratchNote input) {
-					return input.getCategory();
+				public String apply(ScratchNote note) {
+					return note.getCategory();
 				}
 			});
 
@@ -128,8 +127,8 @@ public class NoteDovnUtil {
 	private static Ordering<ScratchNote> orderingUpdatedDate = Ordering.natural().reverse()
 			.onResultOf(new Function<ScratchNote, Date>() {
 				@Override
-				public Date apply(ScratchNote input) {
-					return input.getUpdatedDate();
+				public Date apply(ScratchNote note) {
+					return note.getUpdatedDate();
 				}
 			});
 

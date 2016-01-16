@@ -1,6 +1,6 @@
 package com.abuabdul.notedovn.controller;
 
-import static com.abuabdul.notedovn.util.NoteDovnUtil.isRestricted;
+import static com.abuabdul.notedovn.util.NoteDovnUtil.isRestrictedField;
 import static com.abuabdul.notedovn.util.NoteDovnUtil.wrapInFolder;
 import static org.apache.commons.lang3.StringUtils.isEmpty;
 
@@ -69,7 +69,7 @@ public class NoteDovnPadController {
 	}
 
 	@RequestMapping(value = "/secure/scratch/{id}/removeNotes.go")
-	public String removeScratchNotes(@PathVariable String id, ModelMap model,
+	public String removeScratchNotes(@PathVariable String id,
 			@ModelAttribute("scratchPadForm") ScratchNote scratchNote) {
 		log.debug("Entering removeScratchNotes() in " + this.getClass().getName());
 		try {
@@ -90,12 +90,12 @@ public class NoteDovnPadController {
 		try {
 			response.setStatus(HttpServletResponse.SC_OK);
 			JSONObject json = new JSONObject();
-			if (isEmpty(name)) {
+			if (isEmpty(pk) || isEmpty(name)) {
 				json.put("status", "error");
 				json.put("msg", "cannot update now");
 				return json.toString();
 			}
-			if (isRestricted(name)) {
+			if (isRestrictedField(name) && isEmpty(value)) {
 				json.put("status", "error");
 				json.put("msg", "cannot be empty");
 				return json.toString();

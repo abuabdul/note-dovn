@@ -12,7 +12,6 @@ $(function () {
 	        type: 'text',
 	        url: baseURL + '/secure/scratch/updateNote.go',
 	        success: function(response, newValue){
-	        	alert(response.status + " " + response.msg);
 	            if(response.status == 'error') return response.msg;
 	        }
 	  });
