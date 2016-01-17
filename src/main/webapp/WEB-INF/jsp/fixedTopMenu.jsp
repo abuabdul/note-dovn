@@ -2,7 +2,7 @@
 <script type="text/javascript">
 	baseURL = '<spring:eval expression="@propertyConfigurer.getProperty(\'notedovn.app.base.url\')" />';
 </script>
-    <!-- Navigation -->
+    <%-- Navigation --%>
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header page-scroll">
@@ -18,7 +18,7 @@
                  </a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
+            <%-- Collect the nav links, forms, and other content for toggling --%>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
@@ -36,7 +36,5 @@
                    <li><a href="http://abuabdul.com">&copy; abuabdul.com 2013-2016</span></a>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
     </nav>

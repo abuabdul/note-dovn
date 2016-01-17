@@ -1,5 +1,5 @@
 <%@ include file="/WEB-INF/jsp/includes/siteTags.jsp"%>
-    <!-- ScratchPad Write Section -->
+    <%-- ScratchPad Write Section --%>
     <section id="scratchform" class="scratchform-section">
         <div class="container">
             <div class="row">
@@ -84,7 +84,7 @@
             </div>
         </div>
     </section>
-    <!-- ScratchPad Section -->
+    <%-- ScratchPad Section --%>
     <section id="scratchpad" class="scratchpad-section">
         <div class="container">
             <div class="row">
@@ -144,7 +144,7 @@
         </div>
     </section>
     
-    <!-- About Section -->
+    <%-- About Section --%>
     <section id="about" class="about-section">
         <div class="container">
             <div class="row">

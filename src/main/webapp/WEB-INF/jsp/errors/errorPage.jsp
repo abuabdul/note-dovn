@@ -1,5 +1,5 @@
 <%@ include file="/WEB-INF/jsp/includes/siteTags.jsp"%>
-    <!-- Error Page Section -->
+    <%-- Error Page Section --%>
     <section id="errorPage" class="errorpage-section">
         <div class="container">
             <div class="row">

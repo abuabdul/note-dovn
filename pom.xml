@@ -5,7 +5,7 @@
 	<artifactId>note-dovn</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Note-Dovn - Utility to help pin quick notes, scripts, scratch text</name>
+	<name>Note-Dovn - Utility to help pin quick notes, scripts, scratch text etc</name>
 	<url>http://maven.apache.org</url>
 
 	<repositories>
