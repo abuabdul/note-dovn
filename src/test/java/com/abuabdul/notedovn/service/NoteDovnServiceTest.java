@@ -12,6 +12,10 @@ import com.abuabdul.notedovn.dao.NoteDovnDAO;
 import com.abuabdul.notedovn.document.model.ScratchNote;
 import com.abuabdul.notedovn.exception.NoteDovnServiceException;
 
+/**
+ * @author abuabdul
+ *
+ */
 public class NoteDovnServiceTest {
 
 	@Mock

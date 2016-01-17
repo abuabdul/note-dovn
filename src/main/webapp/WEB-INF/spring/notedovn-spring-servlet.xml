@@ -14,9 +14,6 @@
 	<!-- Scans notedovn whole package for annotated classes -->					
 	<context:component-scan base-package="com.abuabdul.notedovn" />
 	
-	<!-- This is needed if you want to use the @Transactional annotation -->
-	<tx:annotation-driven />
-	
 	<!-- To handle mvc annotations -->
 	<mvc:annotation-driven />
 	
@@ -56,15 +53,4 @@
 		</property>
 	</bean> 
 	
-	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <!--  cache rather very low -->
-        <property name="cacheSeconds">
-            <value>1</value>
-        </property>
-        <property name="basenames">
-            <list>
-                <value>WEB-INF/locale/messages</value>
-            </list>
-        </property>
-    </bean>
 </beans>

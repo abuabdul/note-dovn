@@ -41,10 +41,7 @@ public class NoteDovnDAOImpl implements NoteDovnDAO {
 
 	@Override
 	public void updateNote(String id, String key, Object val) throws NoteDovnServiceException {
-		Update update = new Update();
-		update.set(key, val);
-		update.set("updatedDate", getUTCDateTime());
-		mongoTemplate.updateFirst(query(id), update, ScratchNote.class);
+		mongoTemplate.updateFirst(query(id), update(key, val), ScratchNote.class);
 	}
 
 	@Override
@@ -54,5 +51,12 @@ public class NoteDovnDAOImpl implements NoteDovnDAO {
 
 	protected Query query(String id) {
 		return new Query(where("id").is(id));
+	}
+
+	protected Update update(String key, Object val) {
+		Update update = new Update();
+		update.set(key, val);
+		update.set("updatedDate", getUTCDateTime());
+		return update;
 	}
 }
