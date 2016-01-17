@@ -149,9 +149,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-md-12">
-                    <h1>About Section</h1>
+                    <h1>About</h1>
+                    <%-- write about --%>
+                    <p><strong>Simple, handy notepad-like application. Very simple one page interface. 
+                    Notes are pinned in the middle of the page where they can be edited and updated seamlessly. 
+                    Notes are grouped by category. Otherwise it uses updated date time to group the notes. 
+                    Scratchpad is limited to accept only few entries. About the note and key note message are mandatory information to create a new note, and it also applies while updating any note</strong></p>
                     <a class="btn btn-default page-scroll" href="#scratchform"><span class="glyphicon glyphicon-triangle-top scroll-up"></span></a>
-                    <!-- write about -->
                 </div>
             </div>
         </div>
