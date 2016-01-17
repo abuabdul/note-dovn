@@ -5,7 +5,9 @@ import static com.abuabdul.notedovn.util.NoteDovnUtil.wrapInFolder;
 import static org.apache.commons.lang3.StringUtils.isEmpty;
 
 import java.util.LinkedList;
+import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.logging.log4j.LogManager;
@@ -19,6 +21,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.support.RequestContextUtils;
 
 import com.abuabdul.notedovn.document.folder.NotesFolder;
 import com.abuabdul.notedovn.document.model.ScratchNote;
@@ -39,9 +43,13 @@ public class NoteDovnPadController {
 	private NoteDovnService noteDovnService;
 
 	@RequestMapping(value = "/scratch/notedovnPad.go")
-	public String notedovnPad(ModelMap model) {
+	public String notedovnPad(ModelMap model, HttpServletRequest request) {
 		log.debug("Entering notedovnPad() in " + this.getClass().getName());
 		try {
+			Map<String, ?> inputFlashMap = RequestContextUtils.getInputFlashMap(request);
+			if (inputFlashMap != null) {
+				model.addAttribute("saveNoteDetails", inputFlashMap.get("saveNoteDetails"));
+			}
 			model.addAttribute("scratchPadForm", new ScratchNote());
 			LinkedList<NotesFolder> allNotesInFolder = wrapInFolder(noteDovnService.publishAllScratchNotes());
 			model.addAttribute("notesFolder", allNotesInFolder);
@@ -53,15 +61,13 @@ public class NoteDovnPadController {
 	}
 
 	@RequestMapping(value = "/secure/scratch/makeNotes.go")
-	public String makeScratchNotes(@ModelAttribute("scratchPadForm") ScratchNote scratchNote, ModelMap model) {
+	public String makeScratchNotes(@ModelAttribute("scratchPadForm") ScratchNote scratchNote, ModelMap model,
+			RedirectAttributes redirectAttrs) {
 		log.debug("Entering makeScratchNotes() in " + this.getClass().getName());
 		try {
 			noteDovnService.makeScratchNote(scratchNote);
-			model.addAttribute("scratchPadForm", new ScratchNote());
-			model.addAttribute("saveNoteDetails", true);
-			LinkedList<NotesFolder> allNotesInFolder = wrapInFolder(noteDovnService.publishAllScratchNotes());
-			model.addAttribute("notesFolder", allNotesInFolder);
-			return "notedovnPad";
+			redirectAttrs.addFlashAttribute("saveNoteDetails", true);
+			return "redirect:/scratch/notedovnPad.go";
 		} catch (NoteDovnServiceException ndse) {
 			log.debug("NoteDovnServiceException - " + ndse.getMessage());
 			throw new NoteDovnException(ndse.getMessage());

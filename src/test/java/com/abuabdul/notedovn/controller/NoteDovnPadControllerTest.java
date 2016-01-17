@@ -1,11 +1,18 @@
 package com.abuabdul.notedovn.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.flash;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
+import static org.springframework.web.servlet.DispatcherServlet.INPUT_FLASH_MAP_ATTRIBUTE;
 
+import java.util.Map;
+
+import org.json.JSONObject;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -16,6 +23,7 @@ import org.testng.annotations.Test;
 
 import com.abuabdul.notedovn.document.model.ScratchNote;
 import com.abuabdul.notedovn.service.NoteDovnService;
+import com.beust.jcommander.internal.Maps;
 
 /**
  * @author abuabdul
@@ -40,15 +48,26 @@ public class NoteDovnPadControllerTest {
 	@Test(groups = "integration")
 	public void testNotedovnPad() throws Exception {
 		mockMvc.perform(post("/scratch/notedovnPad.go")).andExpect(status().isOk())
+				.andExpect(model().attributeDoesNotExist("saveNoteDetails"))
+				.andExpect(model().attributeExists("scratchPadForm", "notesFolder"))
+				.andExpect(view().name("notedovnPad"));
+	}
+
+	@Test(groups = "integration")
+	public void testNotedovnPadRedirect() throws Exception {
+		Map<String, Object> inputFlashMap = Maps.newHashMap();
+		inputFlashMap.put("saveNoteDetails", Boolean.TRUE);
+		mockMvc.perform(post("/scratch/notedovnPad.go").requestAttr(INPUT_FLASH_MAP_ATTRIBUTE, inputFlashMap))
+				.andExpect(status().isOk())
+				.andExpect(model().attributeExists("scratchPadForm", "notesFolder", "saveNoteDetails"))
 				.andExpect(view().name("notedovnPad"));
 	}
 
 	@Test(groups = "integration")
 	public void testMakeScratchNotes() throws Exception {
 		mockMvc.perform(post("/secure/scratch/makeNotes.go").sessionAttr("scratchPadForm", new ScratchNote()))
-				.andExpect(status().isOk()).andExpect(model().attributeExists("scratchPadForm"))
-				.andExpect(model().attributeExists("saveNoteDetails")).andExpect(model().attributeExists("notesFolder"))
-				.andExpect(view().name("notedovnPad"));
+				.andExpect(status().isFound()).andExpect(flash().attribute("saveNoteDetails", true))
+				.andExpect(flash().attributeCount(1)).andExpect(redirectedUrl("/scratch/notedovnPad.go"));
 	}
 
 	@Test(groups = "integration")
@@ -59,8 +78,11 @@ public class NoteDovnPadControllerTest {
 
 	@Test(groups = "integration")
 	public void testUpdateScratchNotes() throws Exception {
+		JSONObject json = new JSONObject();
+		json.put("status", "success");
 		mockMvc.perform(post("/secure/scratch/updateNote.go").param("name", "any_name").param("pk", "any_id")
-				.param("value", "any_value").contentType(MediaType.APPLICATION_JSON).content("json_string"))
-				.andExpect(status().isOk()).andReturn();
+				.param("value", "any_value").contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
+				.andExpect(content().contentType(MediaType.APPLICATION_JSON)).andExpect(content().json(json.toString()))
+				.andReturn();
 	}
 }
