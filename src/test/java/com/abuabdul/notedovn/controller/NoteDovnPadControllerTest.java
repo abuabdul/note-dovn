@@ -97,7 +97,7 @@ public class NoteDovnPadControllerTest {
 		JSONObject json = new JSONObject();
 		json.put("status", "success");
 		mockMvc.perform(post("/secure/scratch/updateNote.go").param("name", "any_name").param("pk", "any_id")
-				.param("value", "any_value").contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
+				.param("value", "any_value").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON)).andExpect(content().json(json.toString()))
 				.andReturn();
 	}
