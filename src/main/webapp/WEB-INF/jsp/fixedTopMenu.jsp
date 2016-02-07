@@ -33,7 +33,7 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav pull-right">
-                   <li><a href="http://abuabdul.com">&copy; abuabdul.com 2013-2016</span></a>
+                   <li><a href="http://abuabdul.com">&copy; abuabdul.com 2013-2016</a></li>
                 </ul>
             </div>
         </div>
