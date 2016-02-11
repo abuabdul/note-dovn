@@ -90,14 +90,17 @@ public class NoteDovnPadController {
 		}
 	}
 
-	@RequestMapping(value = "/secure/scratch/{id}/removeNotes.go")
+	@RequestMapping(value = "/secure/scratch/{id}/removeNotes.go", produces = "application/json")
+	@ResponseBody
 	public String removeScratchNotes(@PathVariable String id,
 			@ModelAttribute("scratchPadForm") ScratchNote scratchNote) {
 		log.debug("Entering removeScratchNotes() in " + this.getClass().getName());
 		try {
 			scratchNote.setId(id);
 			noteDovnService.strikeScratchNote(scratchNote);
-			return "notedovnPad";
+			JSONObject json = new JSONObject();
+			json.put("status", "success");
+			return json.toString();
 		} catch (NoteDovnServiceException ndse) {
 			log.debug("NoteDovnServiceException - " + ndse.getMessage());
 			throw new NoteDovnException(ndse.getMessage());

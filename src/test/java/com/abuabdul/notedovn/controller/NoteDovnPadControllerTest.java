@@ -88,8 +88,11 @@ public class NoteDovnPadControllerTest {
 
 	@Test(groups = "integration")
 	public void testRemoveScratchNotes() throws Exception {
+		JSONObject json = new JSONObject();
+		json.put("status", "success");
 		mockMvc.perform(post("/secure/scratch/345676/removeNotes.go").sessionAttr("scratchPadForm", new ScratchNote()))
-				.andExpect(status().isOk()).andExpect(view().name("notedovnPad"));
+				.andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))
+				.andExpect(content().json(json.toString())).andReturn();
 	}
 
 	@Test(groups = "integration")
