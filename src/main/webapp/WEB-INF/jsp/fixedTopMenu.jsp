@@ -14,7 +14,7 @@
                 </button>
                 <a class="navbar-brand page-scroll" href="<c:url value='/scratch/notedovnPad.go'/>">
                      <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                     <span class="brand-logo">Note-Dovn</span> 
+                     <span class="brand-logo">note-dovn</span> 
                  </a>
             </div>
 

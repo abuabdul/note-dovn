@@ -72,9 +72,9 @@
 						   <div class="form-group">
 							   <div class="col-sm-3"></div>
 							   <div class="col-sm-6">
-							       <button type="button" id="resetButton" class="btn btn-sm btn-default">Clear</button>
+							       <button type="button" id="resetButton" class="btn btn-sm btn-default">clear</button>
 							       &nbsp;
-							      <button type="submit" class="btn btn-sm btn-primary">Note-Dovn</button>
+							      <button type="submit" class="btn btn-sm btn-primary">note-dovn</button>
 							   </div>
 							   <div class="col-sm-3"></div>
 						   </div>

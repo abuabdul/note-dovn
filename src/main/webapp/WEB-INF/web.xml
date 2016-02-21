@@ -5,7 +5,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          metadata-complete="false">
 
- 	<display-name>Note-Dovn Application</display-name>
+ 	<display-name>note-dovn Application</display-name>
 	
 	<servlet>
 		<servlet-name>notedovn-spring</servlet-name>

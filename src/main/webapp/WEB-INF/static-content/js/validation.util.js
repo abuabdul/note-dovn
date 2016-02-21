@@ -19,7 +19,7 @@
  *
  * This file contains the code for the global validation rules.
  *
- * @project   Note-Dovn App
+ * @project   note-dovn App
  * @date      18-Dec-2015
  * @author    Abubacker Siddik A, Chennai, India <abuabdul86@hotmail.com>
  * @licensor  Apache License 2.0
