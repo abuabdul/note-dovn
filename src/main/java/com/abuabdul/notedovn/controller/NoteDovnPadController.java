@@ -115,7 +115,7 @@ public class NoteDovnPadController {
 		}
 	}
 
-	@CrossOrigin(origins = { "http://www.abuabdul.com" })
+	@CrossOrigin(value = { "http://www.abuabdul.com" })
 	@RequestMapping(value = "/secure/scratch/updateNote.go", produces = "application/json")
 	@ResponseBody
 	public String updateScratchNotes(HttpServletResponse response, @RequestParam String pk, @RequestParam String name,
