@@ -16,6 +16,7 @@
  */
 package com.abuabdul.notedovn.controller;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.options;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.flash;
@@ -103,5 +104,10 @@ public class NoteDovnPadControllerTest {
 				.param("value", "any_value").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON)).andExpect(content().json(json.toString()))
 				.andReturn();
+	}
+
+	@Test(groups = "integration", enabled = false)
+	public void testHandle() throws Exception {
+		mockMvc.perform(options("/*")).andExpect(status().isOk()).andExpect(content().string("")).andReturn();
 	}
 }

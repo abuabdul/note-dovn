@@ -53,4 +53,8 @@
 		</property>
 	</bean> 
 	
+	<mvc:interceptors>
+       <bean id="noteDovnCorsInterceptor" class="com.abuabdul.notedovn.interceptors.cors.NoteDovnCorsInterceptor"/>
+    </mvc:interceptors> 
+	
 </beans>
