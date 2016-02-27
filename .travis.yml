@@ -1,8 +1,8 @@
 language: java
 
-before_install:
-     - sudo apt-get -qq update
-     - sudo apt-get install oracle-java7-installer 
+#before_install:
+#     - sudo apt-get -qq update
+#     - sudo apt-get install oracle-java7-installer 
 
 install: true
 
