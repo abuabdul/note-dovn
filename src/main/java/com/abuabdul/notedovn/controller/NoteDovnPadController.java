@@ -32,7 +32,6 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -58,12 +57,6 @@ public class NoteDovnPadController {
 
 	@Autowired
 	private NoteDovnService noteDovnService;
-
-	/*
-	 * @RequestMapping(method = RequestMethod.OPTIONS) public
-	 * ResponseEntity<String> handle() { return new
-	 * ResponseEntity<String>(HttpStatus.NO_CONTENT); }
-	 */
 
 	@RequestMapping(value = "/scratch/notedovnPad.go")
 	public String notedovnPad(ModelMap model, HttpServletRequest request) {
@@ -97,7 +90,6 @@ public class NoteDovnPadController {
 		}
 	}
 
-	@CrossOrigin(origins = { "http://www.abuabdul.com" })
 	@RequestMapping(value = "/secure/scratch/{id}/removeNotes.go", produces = "application/json")
 	@ResponseBody
 	public String removeScratchNotes(@PathVariable String id,
@@ -115,7 +107,6 @@ public class NoteDovnPadController {
 		}
 	}
 
-	@CrossOrigin(value = { "http://www.abuabdul.com" })
 	@RequestMapping(value = "/secure/scratch/updateNote.go", produces = "application/json")
 	@ResponseBody
 	public String updateScratchNotes(HttpServletResponse response, @RequestParam String pk, @RequestParam String name,
