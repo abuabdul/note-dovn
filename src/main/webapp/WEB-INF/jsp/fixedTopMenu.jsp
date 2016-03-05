@@ -35,7 +35,7 @@
                 <ul class="nav navbar-nav pull-right">
                    <c:if test="${pageContext.request.userPrincipal.name != null}">
                      <li><a href="#">Hello ${pageContext.request.userPrincipal.name}!</a>
-                     <li><a href="<c:url value="/j_spring_security_logout" />" > Logout</a></li>
+                     <li><a href="<c:url value="/logout" />" > Logout</a></li>
 				   </c:if>
                    <li><a href="http://abuabdul.com">&copy; abuabdul.com 2013-2016</a></li>
                 </ul>
