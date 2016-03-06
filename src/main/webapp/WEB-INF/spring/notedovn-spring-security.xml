@@ -7,9 +7,16 @@
                            http://www.springframework.org/schema/security
                            http://www.springframework.org/schema/security/spring-security-4.0.xsd">					
 
+    <security:http security="none" pattern="/resources/**" />
+	
 	<security:http auto-config="true" use-expressions="true">
 	   <security:intercept-url pattern="/**/secure/**" access="hasRole('ROLE_USER')"/>
-	   <security:logout logout-success-url="/"/>
+	   <security:form-login 
+		    login-page="notedovnPad" 
+		    default-target-url="/scratch/notedovnPad.go" 
+			authentication-failure-url="/secure/scratch/login.go?error" 
+			username-parameter="username"
+			password-parameter="password" />
 	</security:http>
 	
 	<security:authentication-manager>

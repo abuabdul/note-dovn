@@ -1,4 +1,5 @@
 <%@ include file="/WEB-INF/jsp/includes/siteTags.jsp"%>
+<%@page session="true" %>
     <%-- ScratchPad Write Section --%>
     <section id="scratchform" class="scratchform-section">
         <div class="container">
@@ -72,9 +73,16 @@
 						   <div class="form-group">
 							   <div class="col-sm-3"></div>
 							   <div class="col-sm-6">
-							       <button type="button" id="resetButton" class="btn btn-sm btn-default">Clear</button>
+  						          <button type="button" id="resetButton" class="btn btn-sm btn-default">Clear</button>
 							       &nbsp;
-							      <button type="submit" class="btn btn-sm btn-primary">note-dovn</button>
+							      <%--  <c:choose>
+							          <c:when test="${pageContext.request.userPrincipal.name != null}"> --%>
+							               <button type="submit" class="btn btn-sm btn-primary">note-dovn</button>
+							         <%--  </c:when>
+							          <c:otherwise>
+						 			       <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#LoginBox">note-dovn</button>
+	        						  </c:otherwise>
+	        					   </c:choose>	 --%>  
 							   </div>
 							   <div class="col-sm-3"></div>
 						   </div>
@@ -160,3 +168,51 @@
             </div>
         </div>
     </section>
+
+	<!-- Login Modal starts here -->
+	<section class="modal fade" id="LoginBox">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+	                </button>
+	                <h4 class="modal-title">Log In</h4>
+	            </div>
+	            <div class="modal-body">
+	            	<c:url var="userLoginUrl" value="/secure/scratch/login.go"/>
+	            	<form:form id="loginForm" class="form-horizontal" role="form" modelAttribute="loginForm" action="${userLoginUrl}" method="post">
+	  			        <div class="alert alert-info">
+		                   	Looks like abuabdul can only log in. You can request for login account, or feel free to fork the code from github and make your own version.
+	                    </div>
+	                    <div class="form-group">
+			  			    <div class="col-sm-3"></div>
+							<div class="input-group input-append col-sm-6">
+		                            <div class="input-group-addon add-on">@</div>
+							        <form:input type="text" class="form-control" path="username" placeholder="username" 
+									               data-toggle="tooltip" data-placement="top" title="User Name"/>
+							</div>
+							<div class="col-sm-3"></div>
+						 </div>
+						 <div class="form-group">
+			  			    <div class="col-sm-3"></div>
+							<div class="input-group input-append col-sm-6">
+		                            <div class="input-group-addon add-on"><i class="fa fa-key"></i></div>
+							        <form:input type="text" class="form-control" path="password" placeholder="password" 
+									               data-toggle="tooltip" data-placement="top" title="Password"/>
+							</div>
+							<div class="col-sm-3"></div>
+						 </div>
+	                    <div class="form-group">
+							   <div class="col-sm-3"></div>
+							   <div class="col-sm-6 text-center">
+							      <button type="submit" class="btn btn-sm btn-primary" title="Log In">Log In</button>
+							   </div>
+							   <div class="col-sm-3"></div>
+						</div>
+	                </form:form>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+	<!-- Login Modal ends here -->
+    

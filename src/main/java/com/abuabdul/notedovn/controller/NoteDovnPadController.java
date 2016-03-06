@@ -35,6 +35,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -42,6 +43,7 @@ import org.springframework.web.servlet.support.RequestContextUtils;
 
 import com.abuabdul.notedovn.document.folder.NotesFolder;
 import com.abuabdul.notedovn.document.model.ScratchNote;
+import com.abuabdul.notedovn.document.model.form.NoteDovnLoginForm;
 import com.abuabdul.notedovn.exception.NoteDovnException;
 import com.abuabdul.notedovn.exception.NoteDovnServiceException;
 import com.abuabdul.notedovn.service.NoteDovnService;
@@ -67,6 +69,7 @@ public class NoteDovnPadController {
 				model.addAttribute("saveNoteDetails", inputFlashMap.get("saveNoteDetails"));
 			}
 			model.addAttribute("scratchPadForm", new ScratchNote());
+			model.addAttribute("loginForm", new NoteDovnLoginForm());
 			LinkedList<NotesFolder> allNotesInFolder = wrapInFolder(noteDovnService.publishAllScratchNotes());
 			model.addAttribute("notesFolder", allNotesInFolder);
 			return "notedovnPad";
@@ -74,6 +77,24 @@ public class NoteDovnPadController {
 			log.debug("NoteDovnServiceException - " + ndse.getMessage());
 			throw new NoteDovnException(ndse.getMessage());
 		}
+	}
+
+	@RequestMapping(value = "/secure/scratch/login.go", method = RequestMethod.GET)
+	public String login(@ModelAttribute("scratchPadForm") ScratchNote scratchNote,
+			@ModelAttribute("loginForm") NoteDovnLoginForm loginForm, ModelMap model) {
+		log.debug("Entering login() in " + this.getClass().getName()); // try {
+		model.addAttribute("scratchPadForm", scratchNote);
+		model.addAttribute("loginForm", loginForm);
+		return "notedovnPad1";
+
+		/*
+		 * }catch(
+		 * 
+		 * NoteDovnServiceException ndse) { log.debug(
+		 * "NoteDovnServiceException - " + ndse.getMessage()); throw new
+		 * NoteDovnException(ndse.getMessage()); }
+		 */
+
 	}
 
 	@RequestMapping(value = "/secure/scratch/makeNotes.go")

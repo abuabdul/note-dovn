@@ -65,7 +65,7 @@ public class NoteDovnPadControllerTest {
 	public void testNotedovnPad() throws Exception {
 		mockMvc.perform(post("/scratch/notedovnPad.go")).andExpect(status().isOk())
 				.andExpect(model().attributeDoesNotExist("saveNoteDetails"))
-				.andExpect(model().attributeExists("scratchPadForm", "notesFolder"))
+				.andExpect(model().attributeExists("scratchPadForm", "loginForm", "notesFolder"))
 				.andExpect(view().name("notedovnPad"));
 	}
 
