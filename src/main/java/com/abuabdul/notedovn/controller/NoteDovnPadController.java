@@ -85,7 +85,7 @@ public class NoteDovnPadController {
 		log.debug("Entering login() in " + this.getClass().getName()); // try {
 		model.addAttribute("scratchPadForm", scratchNote);
 		model.addAttribute("loginForm", loginForm);
-		return "notedovnPad1";
+		return "login/notedovnPad";
 
 		/*
 		 * }catch(
