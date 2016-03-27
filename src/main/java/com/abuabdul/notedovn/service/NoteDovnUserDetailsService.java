@@ -20,11 +20,14 @@ import static org.springframework.data.mongodb.core.query.Criteria.where;
 
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import com.abuabdul.notedovn.document.model.NoteDovnUser;
+import com.google.common.collect.Lists;
 
 /**
  * @author abuabdul
@@ -43,8 +46,9 @@ public class NoteDovnUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		mongoTemplate.findOne(query(username), NoteDovnUser.class);
-		return null;
+		NoteDovnUser noteDovnUser = mongoTemplate.findOne(query(username), NoteDovnUser.class);
+		SimpleGrantedAuthority authority = new SimpleGrantedAuthority(noteDovnUser.getRole());
+		return new User(noteDovnUser.getUsername(), noteDovnUser.getPassword(), Lists.newArrayList(authority));
 	}
 
 	protected Query query(String username) {

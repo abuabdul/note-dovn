@@ -25,7 +25,7 @@ public class NoteDovnUser {
 	private String id;
 	private String username;
 	private String password;
-	private String roles;
+	private String role;
 
 	/**
 	 * @return the id
@@ -73,17 +73,18 @@ public class NoteDovnUser {
 	}
 
 	/**
-	 * @return the roles
+	 * @return the role
 	 */
-	public String getRoles() {
-		return roles;
+	public String getRole() {
+		return role;
 	}
 
 	/**
-	 * @param roles
-	 *            the roles to set
+	 * @param role
+	 *            the role to set
 	 */
-	public void setRoles(String roles) {
-		this.roles = roles;
+	public void setRole(String role) {
+		this.role = role;
 	}
+
 }

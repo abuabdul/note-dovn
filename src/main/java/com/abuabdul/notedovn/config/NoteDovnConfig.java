@@ -28,6 +28,7 @@ import com.abuabdul.notedovn.dao.NoteDovnDAO;
 import com.abuabdul.notedovn.dao.NoteDovnDAOImpl;
 import com.abuabdul.notedovn.service.NoteDovnService;
 import com.abuabdul.notedovn.service.NoteDovnServiceImpl;
+import com.abuabdul.notedovn.service.NoteDovnUserDetailsService;
 
 /**
  * @author abuabdul
@@ -68,5 +69,10 @@ public class NoteDovnConfig {
 	@Bean
 	public NoteDovnService noteDovnService() throws Exception {
 		return new NoteDovnServiceImpl(noteDovnDAO());
+	}
+
+	@Bean
+	public NoteDovnUserDetailsService noteDovnUserDetailsService() {
+		return new NoteDovnUserDetailsService(mongoTemplate);
 	}
 }
