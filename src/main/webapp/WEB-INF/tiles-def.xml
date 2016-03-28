@@ -17,6 +17,9 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/notedovnPad.jsp" />
 	</definition>
 	
+	<definition name="notedovnPadLogin" extends="base.definition">
+		<put-attribute name="body" value="/WEB-INF/jsp/notedovnPadLogin.jsp" />
+	</definition>
 	
 	<!-- Error page views start -->
 	<definition name="generic/error" extends="base.definition">
