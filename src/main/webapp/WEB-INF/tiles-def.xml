@@ -17,7 +17,7 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/notedovnPad.jsp" />
 	</definition>
 	
-	<definition name="notedovnPadLogin" extends="base.definition">
+	<definition name="login/notedovnPad" extends="base.definition">
 		<put-attribute name="body" value="/WEB-INF/jsp/notedovnPadLogin.jsp" />
 	</definition>
 	
