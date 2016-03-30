@@ -10,10 +10,10 @@
 
 	<security:http auto-config="true" use-expressions="true">
 		<security:intercept-url pattern="/**/secure/**" access="hasRole('ROLE_USER')" />
-		<security:form-login login-page="/secure/scratch/login.go"
+		<!-- <security:form-login login-page="/secure/scratch/login.go"
 			default-target-url="/scratch/notedovnPad.go"
 			authentication-failure-url="/secure/scratch/login.go?error"
-			username-parameter="username" password-parameter="password" />
+			username-parameter="username" password-parameter="password" /> -->
 	</security:http>
 
 	<security:authentication-manager alias="authenticationManager">
