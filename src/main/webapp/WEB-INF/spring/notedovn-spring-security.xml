@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
-                           http://www.springframework.org/schema/security
-                           http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+    http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.0.xsd">
 
-	<security:http security="none" pattern="/resources/**" />
+	<http security="none" pattern="/resources/**" />
 
-	<security:http auto-config="true" use-expressions="true">
-		<security:intercept-url pattern="/**/secure/**" access="hasRole('ROLE_USER')" />
-		<!-- <security:form-login login-page="/secure/scratch/login.go"
+	<http auto-config="true" use-expressions="true">
+	    <intercept-url pattern="/" access="permitAll" />
+		<intercept-url pattern="/**/secure/**" access="hasRole('ADMIN')" />
+		<!-- <form-login login-page="/secure/scratch/login.go"
 			default-target-url="/scratch/notedovnPad.go"
 			authentication-failure-url="/secure/scratch/login.go?error"
 			username-parameter="username" password-parameter="password" /> -->
-	</security:http>
+	</http>
 
-	<security:authentication-manager alias="authenticationManager">
-		<security:authentication-provider user-service-ref="noteDovnUserDetailsService">
-			<security:password-encoder hash="plaintext" />
-		</security:authentication-provider>
-	</security:authentication-manager>
-
-</beans>
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider user-service-ref="noteDovnUserDetailsService">
+			<password-encoder hash="plaintext" />
+		</authentication-provider>
+	</authentication-manager>
+	
+</beans:beans>
