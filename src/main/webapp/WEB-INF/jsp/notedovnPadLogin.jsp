@@ -7,7 +7,6 @@
                 <div class="col-xs-12 col-md-12">
 	                    <h1>Log In</h1>
 	                    <p><strong>Write down your notes, scratch text, scripts</strong></p>
-	                    <a class="btn btn-default page-scroll" href="#about"><span class="glyphicon glyphicon-triangle-bottom scroll-down"></span></a>
                 </div>
                 <div class="col-xs-12 col-md-12 buffer-bottom">
                     <c:url var="userLoginUrl" value="/secure/scratch/login.go"/>
